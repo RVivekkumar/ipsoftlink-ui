@@ -29,13 +29,26 @@ const benefits = [
   },
 ];
 
+const TICK_ICON =
+  "https://res.cloudinary.com/drg82xgxc/image/upload/v1781103130/Group_1686552852_prbpel.png";
+
+const DEV_IMAGE =
+  "https://res.cloudinary.com/drg82xgxc/image/upload/v1781103100/Generated_Image_March_02_2026_-_3_14PM_1_yxhh2t.png";
+
 export default function BusinessGrowthSection() {
   return (
-    <section className="relative overflow-hidden py-24 
-      bg-[url('/bg4.png')] bg-cover bg-center bg-no-repeat">
+    <section
+  className="relative overflow-hidden py-24"
+  style={{
+    backgroundImage:
+      "url('https://res.cloudinary.com/drg82xgxc/image/upload/v1781101697/Frame_2147225663_jtvalg.png')",
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
+  }}
+>
 
       {/* 🔥 Overlay (important for readability) */}
-      <div className="absolute inset-0 bg-white/90 backdrop-blur-sm z-0"></div>
 
       {/* Top Left Dots */}
       <div className="absolute top-0 left-0 opacity-30 z-10">
@@ -84,8 +97,8 @@ export default function BusinessGrowthSection() {
             Solutions that Drive Growth
           </p>
 
-          <h2 className="font-bold text-4xl md:text-5xl lg:text-6xl leading-tight text-[#2563EB]">
-            Business-Focused Software Development
+          <h2 className="font-bold text-4xl md:text-5xl lg:text-6xl leading-tight text-black">
+            Business-Focused <span className="text-[#2563EB]">Software Development</span>
           </h2>
 
           <p className="mt-6 text-lg md:text-2xl text-gray-800 max-w-4xl mx-auto">
@@ -95,57 +108,101 @@ export default function BusinessGrowthSection() {
         </div>
 
         {/* Content */}
-        <div className="grid lg:grid-cols-2 gap-12 items-start mt-20">
-          
-          {/* Left Image */}
-          <div className="bg-white rounded-3xl shadow-xl p-6 lg:p-8">
-            <Image
-              src="/development-cycle.png"
-              alt="Development Cycle"
-              width={900}
-              height={900}
-              className="w-full h-auto"
-            />
+       <div className="grid lg:grid-cols-[1.15fr_0.85fr] gap-10 items-start mt-16">
+
+  {/* Left Side Full Image */}
+  <div className="relative">
+    <Image
+      src={DEV_IMAGE}
+      alt="Business Development"
+      width={900}
+      height={700}
+      className="w-full h-auto"
+      priority
+    />
+  </div>
+
+  {/* Right Side */}
+  <div className="relative">
+
+<div
+  className="
+    absolute
+    left-[-28px]
+    top-[53px]
+    bottom-[40px]
+    w-[2px]
+    h-[550px]
+    bg-[#0057FF]
+  "
+/>
+
+    <div className="space-y-5">
+      {benefits.map((item, index) => (
+       <div
+  key={index}
+  className="flex items-center gap-5 relative"
+>
+  {/* Timeline Dot */}
+ <div
+  className="
+    absolute
+    -left-[32px]
+    top-1/2
+    -translate-y-1/2
+    w-[12px]
+    h-[12px]
+    rounded-full
+    bg-[#0057FF]
+    border-2
+    border-white
+    shadow-md
+    z-30
+  "
+/>
+          {/* Tick Image */}
+         
+          {/* Card */}
+          <div
+            className="
+              flex
+              gap-4
+              bg-white
+              rounded-xl
+              border
+              border-[#E5E7EB]
+              shadow-sm
+              px-5
+              py-4
+              w-full
+            "
+          >
+             <div className="relative z-10">
+           <Image
+  src={TICK_ICON}
+  alt=""
+  width={82}
+  height={82}
+  className="w-[82px] h-[82px] relative z-20"
+/>
           </div>
+           <div>
+            <h3 className="font-semibold text-[18px] text-[#1F2937]">
+              {item.title}
+            </h3>
 
-          {/* Right Timeline */}
-          <div className="relative">
-            
-            {/* Vertical Line */}
-            <div className="absolute left-10 top-0 bottom-0 w-[2px] bg-blue-600" />
-
-            <div className="space-y-8">
-              {benefits.map((item, index) => (
-                <div
-                  key={index}
-                  className="relative flex items-center gap-6"
-                >
-                  {/* Icon */}
-                  <div className="relative z-10 flex-shrink-0">
-                    <div className="w-20 h-20 rounded-full bg-blue-200 flex items-center justify-center">
-                      <CheckCircle2
-                        size={38}
-                        className="text-blue-600"
-                      />
-                    </div>
-                  </div>
-
-                  {/* Card */}
-                  <div className="bg-white rounded-2xl shadow-lg p-6 flex-1">
-                    <h3 className="text-xl md:text-3xl font-bold text-gray-900">
-                      {item.title}
-                    </h3>
-
-                    <p className="mt-2 text-gray-600 text-base md:text-lg">
-                      {item.description}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-
+            <p className="text-[13px] text-[#6B7280] mt-1">
+              {item.description}
+            </p>
+          </div>
           </div>
         </div>
+      ))}
+    </div>
+
+  </div>
+
+</div>
       </div>
     </section>
   );

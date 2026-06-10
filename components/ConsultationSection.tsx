@@ -1,92 +1,291 @@
+"use client";
+
 import Image from "next/image";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, User, Mail, Phone, Shield, ShieldCheck } from "lucide-react";
+
+const features = [
+  {
+    title: "Quick Response",
+    desc: "Within 24 Hours",
+    icon: "https://res.cloudinary.com/drg82xgxc/image/upload/v1781103142/Group_1686552854_5_xkmhz6.png",
+  },
+  {
+    title: "One-to-One Call",
+    desc: "With Solution Experts",
+    icon: "https://res.cloudinary.com/drg82xgxc/image/upload/v1781103142/Group_1686552854_5_xkmhz6.png",
+  },
+  {
+    title: "Tailored Solutions",
+    desc: "For Your Business Needs",
+    icon: "https://res.cloudinary.com/drg82xgxc/image/upload/v1781103142/Group_1686552854_5_xkmhz6.png",
+  },
+];
+
+const benefits = [
+  {
+    image:
+      "https://res.cloudinary.com/drg82xgxc/image/upload/v1781103140/Group_1686552856_ibdjm7.png",
+    title: "Expert Guidance",
+    desc: "Get advice from industry experts",
+  },
+  {
+    image:
+      "https://res.cloudinary.com/drg82xgxc/image/upload/v1781103139/Group_1686552856_1_k1mvft.png",
+    title: "Project Estimation",
+    desc: "Accurate timeline & cost estimation",
+  },
+  {
+    image:
+      "https://res.cloudinary.com/drg82xgxc/image/upload/v1781108885/Group_1686552856_kjx73a.png",
+    title: "Tech Recommendations",
+    desc: "Right technology for your business",
+  },
+  {
+    image:
+      "https://res.cloudinary.com/drg82xgxc/image/upload/v1781108884/Group_1686552856_1_mknksh.png",
+    title: "No Obligation",
+    desc: "100% free and no commitment",
+    shield: true,
+  },
+  {
+    image:
+      "https://res.cloudinary.com/drg82xgxc/image/upload/v1781103139/Group_1686552856_2_lyobon.png",
+    title: "100% Confidential",
+    desc: "Your data is safe and secure",
+  },
+];
 
 export default function ConsultationSection() {
   return (
-    <section className="py-14 md:py-20 lg:py-24 bg-white">
-      <div className="container mx-auto px-4 sm:px-6">
+    <section
+      className="relative overflow-hidden py-14 md:py-20"
+      style={{
+        backgroundImage:
+          "url('https://res.cloudinary.com/drg82xgxc/image/upload/v1781101697/Frame_2147225693_djvkgq.png')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Main Layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          {/* LEFT */}
+          <div>
+            <div className="inline-flex bg-[#0057FF] text-white text-xs font-medium px-4 py-2 rounded-full">
+              100% Free, No Obligation
+            </div>
 
-        <div className="relative overflow-hidden rounded-3xl md:rounded-[40px] bg-gradient-to-r from-[#eaf5ff] to-[#dff0ff] p-5 sm:p-8 md:p-10 lg:p-12">
+            <h2 className="mt-6 md:mt-8 text-[34px] sm:text-[42px] md:text-[48px] lg:text-[58px] leading-tight font-bold text-black">
+              Schedule Your
+              <br />
+              <span className="text-[#0057FF]">
+                Free Consultation
+              </span>
+            </h2>
 
-          {/* Background Shape (hide on mobile) */}
-          <div className="absolute top-0 right-0 w-[45%] h-full bg-blue-100 rounded-l-full opacity-40 hidden md:block" />
+            <p className="mt-5 text-gray-600 text-base md:text-lg max-w-[560px]">
+              Discuss your business goals with our experts and
+              get a customised software solution roadmap for
+              your success.
+            </p>
 
-          {/* Main Card */}
-          <div className="relative z-10 border border-blue-400 rounded-2xl md:rounded-[30px] bg-white/90 backdrop-blur-sm p-5 sm:p-8 md:p-10">
-
-            <div className="grid lg:grid-cols-2 gap-8 md:gap-10 items-center">
-
-              {/* LEFT */}
-              <div className="text-center lg:text-left">
-
-                {/* ✅ Responsive Heading */}
-                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-snug text-gray-900 max-w-[600px] mx-auto lg:mx-0">
-                  Schedule Your Free Consultation
-                </h2>
-
-                <p className="mt-4 md:mt-6 text-gray-700 text-sm sm:text-base md:text-lg max-w-[500px] mx-auto lg:mx-0">
-                  Let's discuss your goals and find the right
-                  technology to grow your business.
-                </p>
-
-                {/* ✅ Responsive Form */}
-                <div className="mt-6 md:mt-10 flex flex-col sm:flex-row gap-3 md:gap-4 max-w-[500px] mx-auto lg:mx-0">
-                  
-                  <input
-                    type="email"
-                    placeholder="name@gmail.com"
-                    className="flex-1 border border-blue-400 rounded-xl px-4 py-3 md:px-6 md:py-4 outline-none text-sm md:text-base"
+            {/* Features */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-8">
+              {features.map((item, index) => (
+                <div
+                  key={index}
+                  className="flex items-center gap-3"
+                >
+                  <Image
+                    src={item.icon}
+                    alt=""
+                    width={42}
+                    height={42}
                   />
 
-                  <button className="w-full sm:w-14 md:w-16 h-12 sm:h-14 md:h-16 rounded-xl bg-blue-600 text-white flex items-center justify-center hover:bg-blue-700 transition">
-                    <ArrowRight size={22} />
-                  </button>
+                  <div>
+                    <h4 className="font-semibold text-sm text-[#111827]">
+                      {item.title}
+                    </h4>
 
+                    <p className="text-xs text-gray-500">
+                      {item.desc}
+                    </p>
+                  </div>
                 </div>
+              ))}
+            </div>
 
-                <h3 className="mt-6 md:mt-10 text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold text-gray-900">
-                  Start Your Journey Today
-                </h3>
+            {/* Form Card */}
+            <div className="mt-8 md:mt-10 bg-white border border-[#0057FF] rounded-[24px] shadow-xl p-5 sm:p-6 md:p-8 w-full max-w-[580px]">
+              <div className="flex items-start gap-4 mb-6">
+                <Image
+                  src="https://res.cloudinary.com/drg82xgxc/image/upload/v1781103144/Group_1686552854_2_txjqev.png"
+                  alt=""
+                  width={55}
+                  height={55}
+                  className="shrink-0"
+                />
 
-                <a
-                  href="#"
-                  className="inline-block mt-2 md:mt-4 text-blue-600 text-base sm:text-lg md:text-xl font-medium hover:underline"
-                >
-                  Talk to Our Experts
-                </a>
+                <div>
+                  <h3 className="font-semibold text-xl md:text-[30px] leading-tight text-black">
+                    Book Your Free Consultation
+                  </h3>
+
+                  <p className="text-sm text-gray-500 mt-1">
+                    Fill in your details and our expert
+                    will connect with you.
+                  </p>
+                </div>
               </div>
 
-              {/* RIGHT IMAGE */}
-              <div className="flex justify-center mt-6 lg:mt-0">
-                <Image
-                  src="/call-center-woman.png"
-                  alt="Consultation Expert"
-                  width={500}
-                  height={500}
-                  className="w-[75%] sm:w-[60%] md:w-[50%] lg:w-full max-h-[300px] sm:max-h-[350px] md:max-h-[400px] lg:max-h-[450px] object-contain"
+              <div className="space-y-4">
+                <InputField
+                  icon={<User size={18} />}
+                  placeholder="Full Name"
+                />
+
+                <InputField
+                  icon={<Mail size={18} />}
+                  placeholder="Work Email"
+                />
+
+                <InputField
+                  icon={<Phone size={18} />}
+                  placeholder="Phone Number"
                 />
               </div>
 
+              <button
+                className="
+                  mt-5
+                  w-full
+                  sm:w-auto
+                  bg-[#0057FF]
+                  hover:bg-[#0048d4]
+                  text-white
+                  px-8
+                  h-[54px]
+                  rounded-xl
+                  flex
+                  items-center
+                  justify-center
+                  gap-3
+                  transition-all
+                "
+              >
+                Book Free Consultation
+                <ArrowRight size={18} />
+              </button>
             </div>
           </div>
 
-          {/* Decorative Dots (hide on mobile) */}
-          <div className="absolute bottom-10 left-1/4 hidden md:block">
-            <div
-              className="w-20 h-10 opacity-40"
-              style={{
-                backgroundImage:
-                  "radial-gradient(#3b82f6 2px, transparent 2px)",
-                backgroundSize: "10px 10px",
-              }}
-            />
+          {/* RIGHT */}
+          <div className="relative flex flex-col items-center">
+            {/* Quote Card */}
+            <div className="relative lg:absolute lg:right-0 lg:top-0 bg-white rounded-2xl shadow-xl p-5 w-full max-w-[280px] z-20 mb-8 lg:mb-0">
+              <div className="text-[#0057FF] text-4xl">
+                ❝
+              </div>
+
+              <p className="text-sm text-gray-700 mt-2 leading-6">
+                Our experts are ready to help transform
+                your ideas into powerful digital solutions.
+              </p>
+
+              <div className="w-12 h-1 bg-[#0057FF] mt-4 rounded-full" />
+            </div>
+
+            {/* Circle Section */}
+            <div className="relative mt-2 lg:mt-72">
+              <div className="w-[280px] h-[280px] sm:w-[360px] sm:h-[360px] md:w-[450px] md:h-[450px] lg:w-[540px] lg:h-[540px] rounded-full bg-[#DCE8FF] flex items-center justify-center">
+                <div className="w-[220px] h-[220px] sm:w-[290px] sm:h-[290px] md:w-[360px] md:h-[360px] lg:w-[430px] lg:h-[430px] rounded-full bg-[#AFCBFF] flex items-center justify-center">
+                  <Image
+                    src="https://res.cloudinary.com/drg82xgxc/image/upload/v1781111726/Group_1686552863_woqhnq.png"
+                    alt=""
+                    width={380}
+                    height={500}
+                    priority
+                    className="w-[180px] sm:w-[240px] md:w-[300px] lg:w-[380px] h-auto"
+                  />
+                </div>
+              </div>
+            </div>
           </div>
+        </div>
 
-          {/* Decorative Triangle (hide on mobile) */}
-          <div className="absolute left-6 top-1/3 hidden md:block w-0 h-0 border-l-[30px] md:border-l-[40px] border-l-blue-400 border-t-[20px] md:border-t-[25px] border-t-transparent border-b-[20px] md:border-b-[25px] border-b-transparent opacity-60" />
+        {/* Bottom Benefits */}
 
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-y-8 mt-16 border-t border-[#D7DCE5] pt-10">
+          {benefits.map((item, index) => (
+            <div
+              key={index}
+              className="px-4 md:px-6 text-center lg:border-r last:border-r-0 border-[#D7DCE5]"
+            >
+              <div className="relative w-[80px] h-[80px] mx-auto">
+                <Image
+                  src={item.image}
+                  alt=""
+                  fill
+                  className="object-contain"
+                />
+
+                {item.shield && (
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <ShieldCheck
+                      size={26}
+                      className="text-white"
+                    />
+                  </div>
+                )}
+              </div>
+
+              <h4 className="font-bold text-[18px] mt-4 text-[#1F2937]">
+                {item.title}
+              </h4>
+
+              <p className="text-sm text-gray-500 mt-2">
+                {item.desc}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
     </section>
+  );
+}
+
+function InputField({
+  icon,
+  placeholder,
+}: {
+  icon: React.ReactNode;
+  placeholder: string;
+}) {
+  return (
+    <div className="relative">
+      <div className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400">
+        {icon}
+      </div>
+
+      <input
+        type="text"
+        placeholder={placeholder}
+        className="
+          w-full
+          h-[56px]
+          border
+          border-[#0057FF]
+          rounded-xl
+          pl-12
+          pr-4
+          text-sm
+          text-gray-700
+          outline-none
+          focus:ring-2
+          focus:ring-blue-200
+        "
+      />
+    </div>
   );
 }

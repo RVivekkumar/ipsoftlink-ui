@@ -1,21 +1,13 @@
 "use client";
 
+import { ChevronRightIcon } from "lucide-react";
 import Image from "next/image";
-import {
-  FaFacebookF,
-  FaInstagram,
-  FaYoutube,
-  FaXTwitter,
-} from "react-icons/fa6";
 
 const services = [
   "Web Development",
   "Software Development",
   "Mobile App Development",
-  "Training & Consulting",
-  "Web3 Development",
   "IT Consulting",
-  "Digital Transformation",
   "Digital Marketing",
 ];
 
@@ -25,19 +17,17 @@ const solutions = [
   "Enterprise Application",
   "Data Analysis",
   "IT Solution Management",
-  "E-commerce",
   "Supply Chain",
-  "Web Portals",
+  "Web-Portals",
 ];
 
 const technologies = [
   "Front-End",
   "Back-End",
   "Cross-Platform",
-  "Full Stack",
-  "DevOps & ML",
   "E-commerce & CMS",
-  "Blockchain",
+  "AI & Machine Learning",
+  "Block Chain",
 ];
 
 const products = [
@@ -48,143 +38,248 @@ const products = [
 
 export default function Footer() {
   return (
-    <footer className="relative overflow-hidden bg-white text-black">
+    <footer className="relative overflow-hidden bg-white text-black pt-16">
+      {/* Main Background Image */}
+      <div className="absolute inset-0 pointer-events-none">
+        <Image
+          src="https://res.cloudinary.com/drg82xgxc/image/upload/v1781101697/Frame_2147225663_jtvalg.png"
+          alt="Background"
+          fill
+          className="object-cover opacity-90"
+          priority
+        />
+      </div>
 
       {/* Top Left Dots */}
       <div
-        className="absolute top-0 left-0 w-40 h-40 md:w-48 md:h-48 opacity-30"
+        className="absolute top-0 left-0 w-44 h-44 md:w-56 md:h-56 opacity-30 pointer-events-none z-10"
         style={{
-          backgroundImage:
-            "radial-gradient(#60a5fa 2px, transparent 2px)",
-          backgroundSize: "18px 18px",
+          backgroundImage: "radial-gradient(#3b82f6 1.8px, transparent 2px)",
+          backgroundSize: "22px 22px",
         }}
       />
 
-      {/* Bottom Wave */}
-      <div className="absolute bottom-0 left-0 w-full pointer-events-none">
-        <svg viewBox="0 0 1440 320" className="w-full">
-          <path
-            fill="#dbeafe"
-            fillOpacity="0.9"
-            d="M0,224L80,245.3C160,267,320,309,480,309.3C640,309,800,267,960,213.3C1120,160,1280,96,1360,64L1440,32L1440,320L0,320Z"
-          />
-        </svg>
-      </div>
-
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 pt-16 md:pt-20">
-
-        {/* GRID */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10 md:gap-12">
-
-          {/* Company */}
-          <div>
+      <div className="relative z-20 max-w-7xl mx-auto px-6 md:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-x-10 gap-y-12">
+          {/* Left Section - Logo + Contact */}
+          <div className="md:col-span-5 lg:col-span-4">
             <Image
-              src="/logo.png"
+              src="https://res.cloudinary.com/drg82xgxc/image/upload/v1781102082/IP_logo2_1_1_1_ako1wn.png"
               alt="IP Softlink"
-              width={130}
-              height={130}
-              className="mb-5"
+              width={140}
+              height={60}
+              className="mb-6"
             />
 
-            <h3 className="text-xl md:text-2xl font-bold mb-4">
-              Visit Us
-            </h3>
-
-            <p className="text-gray-700 text-sm md:text-base leading-7">
-              No 5B, Singarayar colony South Extension
+            <p className="text-[#1e40af] text-[22px] leading-tight font-semibold mb-10">
+              Transforming Businesses
               <br />
-              Narimedu Madurai North
-              <br />
-              BB Kulam Madurai - 625002
+              Through Technology
             </p>
 
-            <div className="mt-6 space-y-2 text-sm md:text-base">
- <p className="font-semibold">Business</p>
+            {/* Visit Us */}
+            <div className="flex gap-4 mb-8">
+              <Image
+                src="https://res.cloudinary.com/drg82xgxc/image/upload/v1781103147/Frame_2147225758_1_ahzq94.png"
+                alt="Location"
+                width={52}
+                height={52}
+                className="h-12 w-auto flex-shrink-0"
+              />
+              <div>
+                <p className="font-semibold text-lg mb-1">Visit Us</p>
+                <p className="text-gray-600 text-[15px] leading-relaxed">
+                  5B, Singarayar Colony, B.B Kulam<br />
+                  Narimedu, Madurai-625002.
+                </p>
+              </div>
+            </div>
 
-  <p>
-    USA:{" "}
-    <a href="tel:+18323871021" className="text-blue-500 hover:underline">
-      +1 (832) 387-1021
-    </a>
-  </p>
+            {/* USA */}
+            <div className="flex gap-4 mb-8">
+              <Image
+                src="https://res.cloudinary.com/drg82xgxc/image/upload/v1781103146/Frame_2147225758_2_zr3dn6.png"
+                alt="USA"
+                width={52}
+                height={52}
+                className="h-12 w-auto flex-shrink-0"
+              />
+              <div>
+                <p className="font-semibold text-lg mb-1">USA</p>
+                <a
+                  href="tel:+18323871021"
+                  className="text-gray-700 hover:text-blue-600 transition"
+                >
+                  +1 (832) 387-1021
+                </a>
+              </div>
+            </div>
 
-  <p>
-    India:{" "}
-    <a href="tel:+919003418834" className="text-blue-500 hover:underline">
-      +91 90034 18834
-    </a>
-  </p>
-              <p>
-                <span className="font-semibold">
-                  Jobs:
-                </span>{" "}
-                +91 9003418834
-              </p>
+            {/* India */}
+            <div className="flex gap-4">
+              <Image
+                src="https://res.cloudinary.com/drg82xgxc/image/upload/v1781103146/Frame_2147225758_3_ypdyun.png"
+                alt="India"
+                width={52}
+                height={52}
+                className="h-12 w-auto flex-shrink-0"
+              />
+              <div>
+                <p className="font-semibold text-lg mb-1">India</p>
+                <a
+                  href="tel:+919003418834"
+                  className="text-gray-700 hover:text-blue-600 transition"
+                >
+                  +91 90034 18834
+                </a>
+              </div>
             </div>
           </div>
 
-          {/* Reusable Column */}
-          {[services, solutions, technologies, products].map(
-            (list, i) => (
-              <div key={i}>
-                <h3 className="text-xl md:text-2xl font-bold mb-4">
-                  {["Services", "Solutions", "Technology", "Product"][i]}
-                </h3>
-
-                <ul className="space-y-2 md:space-y-3 text-gray-700 text-sm md:text-base">
-                  {list.map((item) => (
-                    <li
-                      key={item}
-                      className="hover:text-blue-600 cursor-pointer transition"
-                    >
-                      {item}
-                    </li>
-                  ))}
-                </ul>
+          {/* Right Sections */}
+          <div className="md:col-span-7 lg:col-span-8 grid grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10">
+            {/* Services */}
+            <div>
+              <div className="flex items-center gap-3 mb-6">
+                <Image
+                  src="https://res.cloudinary.com/drg82xgxc/image/upload/v1781103138/Frame_2147225758_yr0kot.png"
+                  alt="Services"
+                  width={48}
+                  height={48}
+                  className="h-12 w-auto"
+                />
               </div>
-            )
-          )}
+                <h3 className="text-xl font-bold text-black">Services</h3>
+
+              <ul className="space-y-3 text-[15px] text-gray-700 py-4">
+                {services.map((item) => (
+                  <li key={item} className="flex items-center gap-2 hover:text-blue-600 transition cursor-pointer">
+                    <span className="text-[#1e40af]"><ChevronRightIcon size={22} color="#0154EE" /> </span> <span className="text-xs">{item} </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Solutions */}
+            <div>
+              <div className="flex items-center gap-3 mb-6">
+                <Image
+                  src="https://res.cloudinary.com/drg82xgxc/image/upload/v1781103138/Frame_2147225761_ipowjj.png"
+                  alt="Solutions"
+                  width={48}
+                  height={48}
+                  className="h-12 w-auto"
+                />
+              </div>
+                <h3 className="text-xl font-bold text-black">Solutions</h3>
+              <ul className="space-y-3 text-[15px] text-gray-700 py-4">
+                {solutions.map((item) => (
+                  <li key={item} className="flex items-center gap-2 hover:text-blue-600 transition cursor-pointer">
+                    <span className="text-[#1e40af]"><ChevronRightIcon size={22} color="#0154EE" /> </span> <span className="text-xs">{item} </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Technology */}
+            <div>
+              <div className="flex items-center gap-3 mb-6">
+                <Image
+                  src="https://res.cloudinary.com/drg82xgxc/image/upload/v1781103137/Frame_2147225762_yup4e2.png"
+                  alt="Technology"
+                  width={48}
+                  height={48}
+                  className="h-12 w-auto"
+                />
+                
+              </div>
+              <h3 className="text-xl font-bold text-black">Technology</h3>
+              <ul className="space-y-3 text-[15px] text-gray-700 py-4">
+                {technologies.map((item) => (
+                  <li key={item} className="flex items-center gap-2 hover:text-blue-600 transition cursor-pointer">
+                    <span className="text-[#1e40af]"><ChevronRightIcon size={22} color="#0154EE" /> </span> <span className="text-xs">{item} </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Product */}
+            <div>
+              <div className="flex items-center gap-3 mb-6">
+                <Image
+                  src="https://res.cloudinary.com/drg82xgxc/image/upload/v1781111083/Frame_2147225763_ywj97y.png"
+                  alt="Product"
+                  width={48}
+                  height={48}
+                  className="h-12 w-auto"
+                />
+              </div>
+                <h3 className="text-xl font-bold text-black">Product</h3>
+
+              <ul className="space-y-3 text-[15px] text-gray-700 py-4">
+                {products.map((item) => (
+                  <li key={item} className="flex items-center gap-2 hover:text-blue-600 transition cursor-pointer">
+                    <span className="text-[#1e40af]"><ChevronRightIcon size={22} color="#0154EE" /></span> <span className="text-xs">{item} </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
         </div>
 
-        {/* Bottom */}
-        <div className="border-t border-gray-300 mt-12 md:mt-16 py-6 md:py-8">
-
-          <div className="flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left">
-
-            <p className="text-gray-700 text-sm md:text-base">
-              © 2026 IP Softlink Solutions. All Rights Reserved.
+        {/* Bottom Bar with Social Icons as Images */}
+        <div className="border-t border-gray-200 mt-16 py-8 relative z-20">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+            <p className="text-gray-600 text-sm md:text-base">
+              Copyright © 2025 IP Softlink. All Rights Reserved.
             </p>
 
-            <div className="flex flex-col sm:flex-row items-center gap-4">
-
-              <span className="font-semibold text-sm md:text-base">
-                Follow us
+            <div className="flex items-center gap-4">
+              <span className="font-semibold text-gray-700 whitespace-nowrap">
+                Follow us on Social media
               </span>
 
+              {/* Social Icons as Images (Exact as provided) */}
               <div className="flex gap-3">
-
-                <a className="w-10 h-10 md:w-11 md:h-11 rounded-full bg-blue-600 text-white flex items-center justify-center hover:bg-blue-700 transition hover:scale-110">
-                  <FaFacebookF size={16} />
-                </a>
-
-                <a className="w-10 h-10 md:w-11 md:h-11 rounded-full bg-blue-600 text-white flex items-center justify-center hover:bg-blue-700 transition hover:scale-110">
-                  <FaXTwitter size={16} />
-                </a>
-
-                <a className="w-10 h-10 md:w-11 md:h-11 rounded-full bg-blue-600 text-white flex items-center justify-center hover:bg-blue-700 transition hover:scale-110">
-                  <FaInstagram size={16} />
-                </a>
-
-                <a className="w-10 h-10 md:w-11 md:h-11 rounded-full bg-blue-600 text-white flex items-center justify-center hover:bg-blue-700 transition hover:scale-110">
-                  <FaYoutube size={16} />
-                </a>
-
+                <Image
+                  src="https://res.cloudinary.com/drg82xgxc/image/upload/v1781103308/Group_161988_yzqyj3.png"
+                  alt="Facebook"
+                  width={42}
+                  height={42}
+                  className="cursor-pointer hover:scale-110 transition"
+                />
+                <Image
+                  src="https://res.cloudinary.com/drg82xgxc/image/upload/v1781103307/Group_143_foa2ic.png"
+                  alt="Twitter"
+                  width={42}
+                  height={42}
+                  className="cursor-pointer hover:scale-110 transition"
+                />
+                <Image
+                  src="https://res.cloudinary.com/drg82xgxc/image/upload/v1781103145/Group_144_knxqlm.png"
+                  alt="Pinterest"
+                  width={42}
+                  height={42}
+                  className="cursor-pointer hover:scale-110 transition"
+                />
+                <Image
+                  src="https://res.cloudinary.com/drg82xgxc/image/upload/v1781103145/Group_145_riy6cr.png"
+                  alt="Instagram"
+                  width={42}
+                  height={42}
+                  className="cursor-pointer hover:scale-110 transition"
+                />
+                <Image
+                  src="https://res.cloudinary.com/drg82xgxc/image/upload/v1781111245/Group_146_kjrlnv.png"
+                  alt="YouTube"
+                  width={42}
+                  height={42}
+                  className="cursor-pointer hover:scale-110 transition"
+                />
               </div>
             </div>
-
           </div>
         </div>
-
       </div>
     </footer>
   );
