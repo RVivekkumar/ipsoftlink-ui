@@ -4,8 +4,36 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
+const serviceItems = [
+  {
+    label: "Software Development",
+    href: "/services/software-development",
+  },
+  {
+    label: "Web Development",
+    href: "/services/web-development",
+  },
+  {
+    label: "Mobile App Development",
+    href: "/services/mobile-app-development",
+  },
+  {
+    label: "UI/UX Design",
+    href: "/services/ui-ux-design",
+  },
+  {
+    label: "E-Commerce Development",
+    href: "/services/ecommerce-development",
+  },
+  {
+    label: "Cloud Solutions",
+    href: "/services/cloud-solutions",
+  },
+];
+
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+const [serviceOpen, setServiceOpen] = useState(false);
 
   return (
     <>
@@ -27,7 +55,24 @@ export default function Navbar() {
           {/* ✅ Desktop Menu */}
           <div className="hidden md:flex gap-6 text-gray-800 font-medium text-sm">
             <Link href="/">Home</Link>
-            <Link href="/service">Service</Link>
+            <div className="relative group">
+  <button className="flex items-center gap-1">
+    Services
+    <span>▼</span>
+  </button>
+
+  <div className="absolute top-full left-0 mt-3 w-64 bg-white rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+    {serviceItems.map((item) => (
+      <Link
+        key={item.href}
+        href={item.href}
+        className="block px-5 py-3 hover:bg-blue-50"
+      >
+        {item.label}
+      </Link>
+    ))}
+  </div>
+</div>
             <Link href="/about">About Us</Link>
             <Link href="/product">Product</Link>
             <Link href="/portfolio">Portfolio</Link>
