@@ -7,6 +7,7 @@ import WhyChooseSection from "@/components/software-development/Whychoosesection
 import EmpoweringIndustriesSection from "@/components/software-development/Empoweringindustriessection";
 import SolutionsSection from "@/components/software-development/Solutionswebuiltsection";
 import ConsultationSection from "@/components/ConsultationSection";
+import TechStack from "@/components/TechStack";
 
 export default function SoftwareDevelopment() {
   return (
@@ -16,6 +17,7 @@ export default function SoftwareDevelopment() {
       <SoftwareServiceSection />
       <WhatMakesDifferentSection />
       <SolutionsSection />
+      <TechStack />
       <WhyChooseSection />
       <EmpoweringIndustriesSection />
       <ConsultationSection />

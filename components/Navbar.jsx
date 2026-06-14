@@ -152,10 +152,10 @@ export default function Navbar() {
   </Link>
 
   <Link
-    href="/career"
+    href="/careers"
     className="text-[14px] font-medium text-[#1E1E1E] hover:text-[#2563EB]"
   >
-    Career
+    Careers
   </Link>
 
   <Link

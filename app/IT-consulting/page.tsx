@@ -8,6 +8,7 @@ import Whychooseconsultingsection from "@/components/IT-consulting/Whychoosecons
 import EmpoweringIndustriesSection from "@/components/software-development/Empoweringindustriessection";
 import MobileappCommitPage from "@/components/mobile-developement/Mobileappcommit";
 import ConsultationSection from "@/components/ConsultationSection";
+import TechStack from "@/components/TechStack";
 
 export default function ITConsulting() {
   return (
@@ -18,6 +19,7 @@ export default function ITConsulting() {
       <Strategicframworksection />
       <Smartitsolutionssection />
       <Whychooseconsultingsection />
+      <TechStack />
       {/* <MobileappCommitPage /> */}
       <EmpoweringIndustriesSection />
       <ConsultationSection />

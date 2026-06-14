@@ -8,6 +8,7 @@ import WhyChooseSection from "@/components/software-development/Whychoosesection
 import EmpoweringIndustriesSection from "@/components/software-development/Empoweringindustriessection";
 import MobileappCommitPage from "@/components/mobile-developement/Mobileappcommit";
 import ConsultationSection from "@/components/ConsultationSection";
+import TechStack from "@/components/TechStack";
 
 export default function MobileDevelopment() {
   return (
@@ -17,6 +18,7 @@ export default function MobileDevelopment() {
       <Mobileappdevsection />
       <Whatwedeliversection />
       <Appswedbuiltsection />
+      <TechStack />
       <MobileappCommitPage />
       <WhyChooseSection />
       <EmpoweringIndustriesSection />

@@ -69,7 +69,7 @@ const industries = [
 
 export default function IndustriesSection() {
   return (
-    <section className="w-full py-20 bg-[#F6F7FB]">
+    <section className="w-full py-10 bg-[#F6F7FB]">
       <div className="max-w-6xl mx-auto">
 
         {/* Heading */}
