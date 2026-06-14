@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useInView } from "framer-motion";
+import { motion, useInView, easeOut } from "framer-motion";
 import { useRef } from "react";
 
 export default function AnimateOnView({
@@ -32,7 +32,7 @@ export default function AnimateOnView({
       transition: {
         duration: duration,
         delay: delay,
-        ease: [0.21, 0.68, 0.38, 0.99],
+        ease: easeOut,
       },
     },
   };
