@@ -50,7 +50,6 @@ export default function Navbar() {
         className="
         w-full
         max-w-[1180px]
-        h-[50px]
         bg-white
         rounded-[18px]
         shadow-lg
