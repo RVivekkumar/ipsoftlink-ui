@@ -42,7 +42,7 @@ const industriesData = [
   },
 ];
 
-export default function ERPIndustries() {
+export default function CRMIndustries() {
   return (
     <section className="py-24 lg:py-32 relative overflow-hidden">
         <div className="absolute inset-0 w-full h-full z-0">
@@ -74,10 +74,10 @@ export default function ERPIndustries() {
               Industries We Serve
             </h3>
             <h2 className="text-[36px] lg:text-[48px] font-bold text-[#1E1E1E] mb-4">
-              ERP solution for <span className="text-[#0052FF]">Every Industry</span>
+              CRM solution for <span className="text-[#0052FF]">Every Industry</span>
             </h2>
             <p className="text-[#4B5563] text-lg max-w-2xl mx-auto">
-              Our ERP System is designed to meet the unique needs of different industries by streamlining operations, improving effective, and driving growth
+              Our CRM System is designed to meet the unique needs of different industries by streamlining operations, improving customer relationships, and driving growth
             </p>
           </div>
         </AnimateOnView>

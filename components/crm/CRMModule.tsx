@@ -60,7 +60,7 @@ const modulesData = [
   },
 ];
 
-export default function ERPModules() {
+export default function CRMModules() {
   return (
     <section className="py-24 lg:py-32 relative overflow-hidden bg-gradient-to-br from-blue-50 to-white">
       <div className="absolute inset-0 w-full h-full z-0">
@@ -90,7 +90,7 @@ export default function ERPModules() {
               OUR COMMITMENT
             </h3>
             <h2 className="text-[36px] lg:text-[48px] font-bold text-[#1E1E1E] mb-4">
-              Key ERP Modules
+              Key CRM Modules
             </h2>
             <p className="text-[#4B5563] text-lg max-w-3xl mx-auto">
               We Don't Just Build Apps - We Craft Digital Experiences That

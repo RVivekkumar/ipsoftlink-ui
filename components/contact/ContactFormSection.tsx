@@ -7,8 +7,19 @@ import AnimateOnView from "@/components/ui/AnimateOnView";
 export default function ContactFormSection() {
   return (
     <section className="py-24 bg-white relative overflow-hidden">
+      {/* Main Background Image */}
+      <div className="absolute inset-0 w-full h-full z-0">
+        <Image
+          src="https://res.cloudinary.com/drxigvlxc/image/upload/v1781416214/Frame_2147225818_vn9vls.png"
+          alt="contact Background"
+          fill
+          className="object-cover"
+          priority
+        />
+      </div>
       {/* Background patterns */}
-      <div className="absolute top-0 right-0 p-10 opacity-10 pointer-events-none">
+
+      <div className="absolute top-0 right-0 p-10 opacity-10 pointer-events-none ">
         <div className="grid grid-cols-3 gap-4">
             {[...Array(18)].map((_, i) => (
                 <div key={i} className="w-2 h-2 bg-blue-600 rounded-full"></div>
@@ -23,15 +34,15 @@ export default function ContactFormSection() {
         </div>
       </div>
       
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-6 relative z-10">
         {/* Header */}
         <AnimateOnView direction="up">
           <div className="mb-20">
             <h2 className="text-4xl lg:text-5xl font-bold text-[#1E1E1E] mb-6">
-              We'd <span className="relative inline-block">
+              We'd <span className="relative inline-block text-[#0154EE]">
                 Love To Hear
-                <span className="absolute bottom-1 left-0 w-full h-[6px] bg-blue-600/20"></span>
-                <span className="absolute bottom-1 left-0 w-1/2 h-[6px] bg-blue-600"></span>
+                <span className="absolute -bottom-2 left-0 w-full h-[3px] bg-[#0154EE]"></span>
+                {/* <span className="absolute -bottom-3 left-0 w-1/2 h-[6px] bg-blue-600"></span> */}
               </span>
             </h2>
             <p className="text-[#6B7280] text-xl max-w-2xl leading-relaxed">
@@ -74,32 +85,32 @@ export default function ContactFormSection() {
 
           {/* Center Column - Image */}
           <AnimateOnView direction="up" delay={0.4} className="lg:col-span-4 h-full">
-            <div className="relative w-full aspect-square rounded-[40px] overflow-hidden shadow-2xl bg-[#F8FAFF] group">
+            <div className="relative w-full aspect-square rounded-xl overflow-hidden shadow-2xl group">
               {/* Center Image Placeholder */}
               <div className="absolute inset-0 flex items-center justify-center text-blue-300 font-medium p-12 text-center group-hover:scale-105 transition-transform duration-500">
                  <div className="space-y-4">
-                    <p className="text-blue-500 font-bold">Cloudinary Image Here</p>
-                    <p className="text-gray-400 text-sm">3 People working with Globe Background</p>
-                 </div>
-              </div>
-               <Image
-                src="https://res.cloudinary.com/drg82xgxc/image/upload/v1781102082/IP_logo2_1_1_1_ako1wn.png"
+                   <Image
+                src="https://res.cloudinary.com/drxigvlxc/image/upload/v1781417378/Frame_1686552783_hhiywh.png" 
                 alt="Team working"
                 fill
-                className="object-contain p-24 opacity-10"
+                loading="lazy"
+                className="object-cover"
               />
+                 </div>
+              </div>
+              
             </div>
           </AnimateOnView>
 
           {/* Right Column - Form */}
-          <AnimateOnView direction="up" delay={0.5} className="lg:col-span-5 bg-white">
+          <AnimateOnView direction="up" delay={0.5} className="lg:col-span-5 p-6 bg-white">
             <form className="space-y-8">
               <div className="grid grid-cols-1 gap-8">
                 <InputField label="Full Name" type="text" placeholder="Enter your full name" required />
                 <InputField label="E-Mail" type="email" placeholder="Enter your email address" required />
                 <InputField label="Phone/Mobile" type="tel" placeholder="Enter your phone number" required />
                 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 p-10">
                    <SelectField label="Select Country" options={["India", "USA", "UK", "Other"]} required />
                    <SelectField label="Select Services" options={["Software Development", "Mobile App Development", "IT Consulting", "Other"]} required />
                 </div>

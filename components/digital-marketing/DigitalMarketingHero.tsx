@@ -7,6 +7,15 @@ import AnimateOnView from "@/components/ui/AnimateOnView";
 export default function DigitalMarketingHero() {
   return (
     <section className="pt-48 pb-24 lg:py-48 relative overflow-hidden">
+      <div className="absolute inset-0 w-full h-full z-0">
+        <Image
+          src="https://res.cloudinary.com/drxigvlxc/image/upload/v1781422413/Frame_2147225832_l27214.png"
+          alt="contact Background"
+          fill
+          className="object-cover"
+          priority
+        />
+      </div>
       {/* Background Decor */}
       <div className="absolute bottom-0 left-0 w-full h-[500px]">
         <svg className="w-full h-full" viewBox="0 0 1440 500" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -25,12 +34,12 @@ export default function DigitalMarketingHero() {
           {/* Left Content */}
           <div className="lg:w-1/2">
             <AnimateOnView direction="right">
-              <h2 className="text-[42px] lg:text-[64px] font-bold text-[#1E1E1E] mb-2">
+              <h2 className="text-[42px] lg:text-[64px] font-semibold text-[#1E1E1E] mb-2">
                 Digital Marketing
               </h2>
             </AnimateOnView>
             <AnimateOnView direction="right" delay={0.1}>
-              <h1 className="text-[42px] lg:text-[64px] font-bold text-[#0052FF] mb-8">
+              <h1 className="text-[42px] lg:text-[64px] font-semibold text-[#0052FF] mb-8">
                 That Drives Results.
               </h1>
             </AnimateOnView>
@@ -42,19 +51,19 @@ export default function DigitalMarketingHero() {
 
             {/* Buttons */}
             <AnimateOnView direction="right" delay={0.3}>
-            <div className="flex flex-wrap gap-4">
-              <button className="px-8 py-4 bg-[#0052FF] hover:bg-blue-700 text-white font-bold rounded-xl shadow-lg shadow-blue-500/30 transition-all duration-300 flex items-center gap-2">
-                Explore Our Services <ArrowRight className="w-4 h-4" />
-              </button>
-              <button className="px-8 py-4 bg-white hover:bg-gray-50 text-[#1E1E1E] font-bold rounded-xl shadow-md transition-all duration-300">
-                View Our Work
-              </button>
-            </div>
+              <div className="flex flex-wrap gap-4">
+                <button className="px-8 py-4 bg-[#0052FF] hover:bg-blue-700 text-white font-bold rounded-xl shadow-lg shadow-blue-500/30 transition-all duration-300 flex items-center gap-2">
+                  Explore Our Services <ArrowRight className="w-4 h-4" />
+                </button>
+                <button className="px-8 py-4 bg-white hover:bg-gray-50 text-[#1E1E1E] font-bold rounded-xl shadow-md transition-all duration-300">
+                  View Our Work
+                </button>
+              </div>
             </AnimateOnView>
           </div>
 
           {/* Right Image */}
-          <AnimateOnView direction="left" delay={0.4} className="lg:w-1/2 relative">
+          {/* <AnimateOnView direction="left" delay={0.4} className="lg:w-1/2 relative">
             <div className="relative w-full aspect-[4/3] rounded-[32px] overflow-hidden shadow-2xl">
               <div className="absolute inset-0 flex items-center justify-center text-center p-10 text-blue-400 z-10">
                 <div>
@@ -69,7 +78,7 @@ export default function DigitalMarketingHero() {
                 className="object-cover opacity-10"
               />
             </div>
-          </AnimateOnView>
+          </AnimateOnView> */}
         </div>
       </div>
     </section>

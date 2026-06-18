@@ -2,23 +2,24 @@
 
 import { ChevronRightIcon } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 const services = [
-  "Web Development",
-  "Software Development",
-  "Mobile App Development",
-  "IT Consulting",
-  "Digital Marketing",
+  { name: "Software Development", href: "/software-development" },
+  { name: "Mobile App Development", href: "/mobile-developement" },
+  { name: "IT Consulting", href: "/IT-consulting" },
+  { name: "Digital Marketing", href: "/digital-marketing" },
+  { name: "Web Development", href: "/software-development" },
 ];
 
 const solutions = [
-  "ERP",
-  "CRM",
-  "Enterprise Application",
-  "Data Analysis",
-  "IT Solution Management",
-  "Supply Chain",
-  "Web-Portals",
+  { name: "ERP", href: "/erp" },
+  { name: "CRM", href: "/erp" },
+  { name: "Enterprise Application", href: "/software-development" },
+  { name: "Data Analysis", href: "/IT-consulting" },
+  { name: "IT Solution Management", href: "/IT-consulting" },
+  { name: "Supply Chain", href: "/erp" },
+  { name: "Web-Portals", href: "/software-development" },
 ];
 
 const technologies = [
@@ -63,13 +64,15 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-x-10 gap-y-12">
           {/* Left Section - Logo + Contact */}
           <div className="md:col-span-5 lg:col-span-4">
-            <Image
-              src="https://res.cloudinary.com/drg82xgxc/image/upload/v1781102082/IP_logo2_1_1_1_ako1wn.png"
-              alt="IP Softlink"
-              width={140}
-              height={60}
-              className="mb-6"
-            />
+            <Link href="/">
+              <Image
+                src="https://res.cloudinary.com/drg82xgxc/image/upload/v1781102082/IP_logo2_1_1_1_ako1wn.png"
+                alt="IP Softlink"
+                width={140}
+                height={60}
+                className="mb-6 cursor-pointer hover:opacity-90 transition"
+              />
+            </Link>
 
             <p className="text-[#1e40af] text-[22px] leading-tight font-semibold mb-10">
               Transforming Businesses
@@ -153,8 +156,10 @@ export default function Footer() {
 
               <ul className="space-y-3 text-[15px] text-gray-700 py-4">
                 {services.map((item) => (
-                  <li key={item} className="flex items-center gap-2 hover:text-blue-600 transition cursor-pointer">
-                    <span className="text-[#1e40af]"><ChevronRightIcon size={22} color="#0154EE" /> </span> <span className="text-xs">{item} </span>
+                  <li key={item.name} className="flex items-center gap-2 hover:text-blue-600 transition">
+                    <Link href={item.href} className="flex items-center gap-2">
+                      <span className="text-[#1e40af]"><ChevronRightIcon size={22} color="#0154EE" /> </span> <span className="text-xs">{item.name} </span>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -174,8 +179,10 @@ export default function Footer() {
                 <h3 className="text-xl font-bold text-black">Solutions</h3>
               <ul className="space-y-3 text-[15px] text-gray-700 py-4">
                 {solutions.map((item) => (
-                  <li key={item} className="flex items-center gap-2 hover:text-blue-600 transition cursor-pointer">
-                    <span className="text-[#1e40af]"><ChevronRightIcon size={22} color="#0154EE" /> </span> <span className="text-xs">{item} </span>
+                  <li key={item.name} className="flex items-center gap-2 hover:text-blue-600 transition">
+                    <Link href={item.href} className="flex items-center gap-2">
+                      <span className="text-[#1e40af]"><ChevronRightIcon size={22} color="#0154EE" /> </span> <span className="text-xs">{item.name} </span>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -241,41 +248,51 @@ export default function Footer() {
 
               {/* Social Icons as Images (Exact as provided) */}
               <div className="flex gap-3">
-                <Image
-                  src="https://res.cloudinary.com/drg82xgxc/image/upload/v1781103308/Group_161988_yzqyj3.png"
-                  alt="Facebook"
-                  width={42}
-                  height={42}
-                  className="cursor-pointer hover:scale-110 transition"
-                />
-                <Image
-                  src="https://res.cloudinary.com/drg82xgxc/image/upload/v1781103307/Group_143_foa2ic.png"
-                  alt="Twitter"
-                  width={42}
-                  height={42}
-                  className="cursor-pointer hover:scale-110 transition"
-                />
-                <Image
-                  src="https://res.cloudinary.com/drg82xgxc/image/upload/v1781103145/Group_144_knxqlm.png"
-                  alt="Pinterest"
-                  width={42}
-                  height={42}
-                  className="cursor-pointer hover:scale-110 transition"
-                />
-                <Image
-                  src="https://res.cloudinary.com/drg82xgxc/image/upload/v1781103145/Group_145_riy6cr.png"
-                  alt="Instagram"
-                  width={42}
-                  height={42}
-                  className="cursor-pointer hover:scale-110 transition"
-                />
-                <Image
-                  src="https://res.cloudinary.com/drg82xgxc/image/upload/v1781111245/Group_146_kjrlnv.png"
-                  alt="YouTube"
-                  width={42}
-                  height={42}
-                  className="cursor-pointer hover:scale-110 transition"
-                />
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+                  <Image
+                    src="https://res.cloudinary.com/drg82xgxc/image/upload/v1781103308/Group_161988_yzqyj3.png"
+                    alt="Facebook"
+                    width={42}
+                    height={42}
+                    className="cursor-pointer hover:scale-110 transition"
+                  />
+                </a>
+                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+                  <Image
+                    src="https://res.cloudinary.com/drg82xgxc/image/upload/v1781103307/Group_143_foa2ic.png"
+                    alt="Twitter"
+                    width={42}
+                    height={42}
+                    className="cursor-pointer hover:scale-110 transition"
+                  />
+                </a>
+                <a href="https://pinterest.com" target="_blank" rel="noopener noreferrer">
+                  <Image
+                    src="https://res.cloudinary.com/drg82xgxc/image/upload/v1781103145/Group_144_knxqlm.png"
+                    alt="Pinterest"
+                    width={42}
+                    height={42}
+                    className="cursor-pointer hover:scale-110 transition"
+                  />
+                </a>
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+                  <Image
+                    src="https://res.cloudinary.com/drg82xgxc/image/upload/v1781103145/Group_145_riy6cr.png"
+                    alt="Instagram"
+                    width={42}
+                    height={42}
+                    className="cursor-pointer hover:scale-110 transition"
+                  />
+                </a>
+                <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">
+                  <Image
+                    src="https://res.cloudinary.com/drg82xgxc/image/upload/v1781111245/Group_146_kjrlnv.png"
+                    alt="YouTube"
+                    width={42}
+                    height={42}
+                    className="cursor-pointer hover:scale-110 transition"
+                  />
+                </a>
               </div>
             </div>
           </div>

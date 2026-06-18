@@ -3,6 +3,7 @@
 import Image from "next/image";
 import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
+import AnimateOnView from "./ui/AnimateOnView";
 
 const counters = [
   {
@@ -53,9 +54,9 @@ export default function CounterSection() {
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
             {counters.map((item, index) => (
-              <div
-                key={index}
-                className="
+              <AnimateOnView key={index} delay={index * 0.15}>
+                <div
+                  className="
                   bg-white
                   rounded-[14px]
                   py-8
@@ -70,32 +71,33 @@ export default function CounterSection() {
                   transition-all
                   duration-300
                 "
-              >
-                <Image
-                  src={item.image}
-                  alt={item.label}
-                  width={52}
-                  height={52}
-                  className="object-contain"
-                />
+                >
+                  <Image
+                    src={item.image}
+                    alt={item.label}
+                    width={52}
+                    height={52}
+                    className="object-contain"
+                  />
 
-                <h3 className="mt-4 text-[28px] md:text-[34px] font-bold text-[#223354]">
-                  {inView ? (
-                    <CountUp
-                      start={0}
-                      end={item.count}
-                      duration={2.5}
-                      suffix={item.suffix}
-                    />
-                  ) : (
-                    `0${item.suffix}`
-                  )}
-                </h3>
+                  <h3 className="mt-4 text-[28px] md:text-[34px] font-bold text-[#223354]">
+                    {inView ? (
+                      <CountUp
+                        start={0}
+                        end={item.count}
+                        duration={2.5}
+                        suffix={item.suffix}
+                      />
+                    ) : (
+                      `0${item.suffix}`
+                    )}
+                  </h3>
 
-                <p className="mt-1 text-[#7A7A7A] text-sm md:text-base">
-                  {item.label}
-                </p>
-              </div>
+                  <p className="mt-1 text-[#7A7A7A] text-sm md:text-base">
+                    {item.label}
+                  </p>
+                </div>
+              </AnimateOnView>
             ))}
           </div>
         </div>

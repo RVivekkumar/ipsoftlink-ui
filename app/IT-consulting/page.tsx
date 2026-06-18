@@ -9,6 +9,29 @@ import EmpoweringIndustriesSection from "@/components/software-development/Empow
 import MobileappCommitPage from "@/components/mobile-developement/Mobileappcommit";
 import ConsultationSection from "@/components/ConsultationSection";
 import TechStack from "@/components/TechStack";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "IT Consulting Services - IP Softlink",
+  description: "Expert IT consulting services from IP Softlink. Transform your business with strategic technology solutions, digital transformation, and innovative IT strategies.",
+  keywords: ["IT consulting", "digital transformation", "technology consulting", "IT strategy"],
+  openGraph: {
+    title: "IT Consulting Services - IP Softlink",
+    description: "Expert IT consulting services from IP Softlink. Transform your business with strategic technology solutions, digital transformation, and innovative IT strategies.",
+    url: "https://ipsoftlink.com/IT-consulting",
+    siteName: "IP Softlink",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "IT Consulting Services - IP Softlink",
+    description: "Expert IT consulting services from IP Softlink. Transform your business with strategic technology solutions, digital transformation, and innovative IT strategies.",
+  },
+  alternates: {
+    canonical: "https://ipsoftlink.com/IT-consulting",
+  },
+};
 
 export default function ITConsulting() {
   return (

@@ -7,6 +7,15 @@ import AnimateOnView from "@/components/ui/AnimateOnView";
 export default function ERPHero() {
   return (
     <section className="pt-48 pb-24 lg:py-48 relative overflow-hidden bg-gradient-to-br from-blue-50 to-white">
+      <div className="absolute inset-0 w-full h-full z-0">
+        <Image
+          src="https://res.cloudinary.com/drxigvlxc/image/upload/v1781426444/Frame_2147226456_vhyw8b.png"
+          alt="contact Background"
+          fill
+          className="object-cover"
+          priority
+        />
+      </div>
       {/* Background Decor */}
       <div className="absolute bottom-0 left-0 w-full h-[500px]">
         <svg className="w-full h-full" viewBox="0 0 1440 500" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -25,12 +34,12 @@ export default function ERPHero() {
           {/* Left Content */}
           <div className="lg:w-1/2">
             <AnimateOnView direction="right">
-              <h2 className="text-[36px] lg:text-[56px] font-bold text-[#1E1E1E] mb-3 leading-tight">
+              <h2 className="text-[36px] lg:text-[56px] font-semibold text-[#1E1E1E] mb-3 leading-tight">
                 ERP Solutions That
               </h2>
             </AnimateOnView>
             <AnimateOnView direction="right" delay={0.1}>
-              <h1 className="text-[36px] lg:text-[56px] font-bold text-[#0052FF] mb-8 leading-tight">
+              <h1 className="text-[36px] lg:text-[56px] font-semibold text-[#0052FF] mb-8 leading-tight">
                 Drive Efficiency &
                 <br />
                 Growth
@@ -60,22 +69,18 @@ export default function ERPHero() {
           </div>
 
           {/* Right Image */}
-          <AnimateOnView direction="left" delay={0.4} className="lg:w-1/2 relative">
+          {/* <AnimateOnView direction="left" delay={0.4} className="lg:w-1/2 relative">
             <div className="relative w-full aspect-[4/3]">
               <div className="absolute inset-0 flex items-center justify-center text-center p-10 text-blue-400 z-10">
-                <div>
-                  <p className="font-bold text-lg mb-2">Cloudinary Image Here</p>
-                  <p className="text-sm text-gray-400">ERP Dashboard Illustration</p>
-                </div>
-              </div>
+                
               <Image
-                src="https://res.cloudinary.com/drg82xgxc/image/upload/v1781102082/IP_logo2_1_1_1_ako1wn.png"
+                src="https://res.cloudinary.com/drxigvlxc/image/upload/v1781426444/Frame_2147226456_vhyw8b.png"
                 alt="ERP Dashboard"
                 fill
-                className="object-cover opacity-10"
+                className="object-cover"
               />
+              </div>
 
-              {/* Floating Icons */}
               <div className="absolute top-10 left-10 bg-white p-3 rounded-2xl shadow-lg animate-bounce">
                 <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-600">
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -105,7 +110,7 @@ export default function ERPHero() {
                 </div>
               </div>
             </div>
-          </AnimateOnView>
+          </AnimateOnView> */}
         </div>
       </div>
     </section>

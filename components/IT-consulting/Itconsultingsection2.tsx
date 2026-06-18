@@ -1,5 +1,7 @@
 "use client";
 
+import AnimateOnView from "../ui/AnimateOnView";
+
 const LIST_ITEMS = [
   {
     image: "https://res.cloudinary.com/drg82xgxc/image/upload/v1781256423/Frame_2147225754_xqzuk9.png",
@@ -106,72 +108,78 @@ export default function ITConsultingSection2() {
           {/* ══════════════════════════════════
               LEFT: heading + list
           ══════════════════════════════════ */}
-          <div className="flex flex-col gap-6">
+          <AnimateOnView direction="right">
+            <div className="flex flex-col gap-6">
 
-            {/* Heading */}
-            <div>
-              <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 leading-tight">
-                Strategic IT
-                <br />
-                <div className="">
+              {/* Heading */}
+              <div>
+                <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 leading-tight">
+                  Strategic IT
+                  <br />
+                  <div className="">
   <span className="text-blue-600 font-semibold">
     Consulting
   </span>
 
   <div className="h-[2px] w-16 bg-blue-600"></div>
 </div>
-              </h2>
-              <p className="mt-3 text-black font-semibold text-[14px]">
-                Driving Technology. Delivering Growth
-              </p>
-              <p className="mt-2 text-slate-600 text-[13.5px] leading-relaxed max-w-[400px]">
-                We Help Business Choose The Right Technology, Optimise Operations, Reduce Costs,
-                And Accelerate Digital Transformation.
-              </p>
-            </div>
+                </h2>
+                <p className="mt-3 text-black font-semibold text-[14px]">
+                  Driving Technology. Delivering Growth
+                </p>
+                <p className="mt-2 text-slate-600 text-[13.5px] leading-relaxed max-w-[400px]">
+                  We Help Business Choose The Right Technology, Optimise Operations, Reduce Costs,
+                  And Accelerate Digital Transformation.
+                </p>
+              </div>
 
-            {/* List */}
-            <div className="flex flex-col gap-5 mt-2">
-              {LIST_ITEMS.map((item, i) => (
-                <div key={i} className="flex items-start gap-4">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    className="w-11 h-11 object-contain shrink-0"
-                  />
-                  <div>
-                    <h4 className="text-blue-600 font-bold text-[14.5px] leading-snug">
-                      {item.title}
-                    </h4>
-                    <p className="text-slate-500 text-[12.5px] leading-relaxed mt-0.5">
-                      {item.desc}
-                    </p>
-                  </div>
-                </div>
-              ))}
+              {/* List */}
+              <div className="flex flex-col gap-5 mt-2">
+                {LIST_ITEMS.map((item, i) => (
+                  <AnimateOnView key={i} delay={i * 0.1} direction="right">
+                    <div key={i} className="flex items-start gap-4">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={item.image}
+                        alt={item.title}
+                        className="w-11 h-11 object-contain shrink-0"
+                      />
+                      <div>
+                        <h4 className="text-blue-600 font-bold text-[14.5px] leading-snug">
+                          {item.title}
+                        </h4>
+                        <p className="text-slate-500 text-[12.5px] leading-relaxed mt-0.5">
+                          {item.desc}
+                        </p>
+                      </div>
+                    </div>
+                  </AnimateOnView>
+                ))}
+              </div>
             </div>
-          </div>
+          </AnimateOnView>
 
           {/* ══════════════════════════════════
               RIGHT: center tech image + 5 floating cards
           ══════════════════════════════════ */}
-          <div className="relative w-full min-h-[500px] flex items-center justify-center">
+          <AnimateOnView direction="left" delay={0.2}>
+            <div className="relative w-full min-h-[500px] flex items-center justify-center">
 
-            {/* Center tech image */}
-            <div className="relative z-10 w-full max-w-sm">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="https://res.cloudinary.com/drg82xgxc/image/upload/v1781256418/Group_1686552867_lagsez.png"
-                alt="IT Consulting tech platform"
-                className="w-full object-contain drop-shadow-xl"
-              />
+              {/* Center tech image */}
+              <div className="relative z-10 w-full max-w-sm">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="https://res.cloudinary.com/drg82xgxc/image/upload/v1781256418/Group_1686552867_lagsez.png"
+                  alt="IT Consulting tech platform"
+                  className="w-full object-contain drop-shadow-xl"
+                />
+              </div>
+
+              {/* ── Floating cards ── */}
+
+             
             </div>
-
-            {/* ── Floating cards ── */}
-
-           
-          </div>
+          </AnimateOnView>
           {/* end right col */}
 
         </div>

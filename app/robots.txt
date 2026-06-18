@@ -1,0 +1,7 @@
+# IP Softlink Robots.txt
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://ipsoftlink.com/sitemap.xml

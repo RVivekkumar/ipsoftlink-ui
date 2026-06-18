@@ -1,28 +1,31 @@
 "use client";
 
 import Image from "next/image";
-import { Rocket, Users, Zap, BarChart3 } from "lucide-react";
 import AnimateOnView from "@/components/ui/AnimateOnView";
 
 const commitmentData = [
   {
-    icon: <Rocket className="w-10 h-10 text-[#0052FF]" />,
+    icon: "https://res.cloudinary.com/drxigvlxc/image/upload/v1781425432/ChatGPT_Image_Jun_8_2026_12_06_17_PM_2_vqbcnz.png",
     title: "Strategic Focus",
+    iconColor: "#059F61",
     description: "We understand your business and create strategies that align with your goals.",
   },
   {
-    icon: <Users className="w-10 h-10 text-[#0052FF]" />,
+    icon: "https://res.cloudinary.com/drxigvlxc/image/upload/v1781425431/ChatGPT_Image_Jun_8_2026_12_06_17_PM_2_1_eufwim.png",
     title: "End-to-End Partnership",
+    iconColor: "#E82A66",
     description: "From planning to execution, we're with you every step.",
   },
   {
-    icon: <Zap className="w-10 h-10 text-[#0052FF]" />,
+    icon: "https://res.cloudinary.com/drxigvlxc/image/upload/v1781425430/ChatGPT_Image_Jun_8_2026_12_06_17_PM_2_2_jenf1g.png",
     title: "Agile & Efficient",
+    iconColor: "#6736DA",
     description: "We use smart processes and tools to deliver faster without compromising quality.",
   },
   {
-    icon: <BarChart3 className="w-10 h-10 text-[#0052FF]" />,
+    icon: "https://res.cloudinary.com/drxigvlxc/image/upload/v1781425430/ChatGPT_Image_Jun_8_2026_12_06_17_PM_2_3_knauxi.png",
     title: "Results That Matter",
+    iconColor: "#FE7B14",
     description: "Focus on measurable results that drive real growth and long-term success.",
   },
 ];
@@ -30,6 +33,15 @@ const commitmentData = [
 export default function OurCommitment() {
   return (
     <section className="py-24 lg:py-32 relative overflow-hidden">
+      <div className="absolute inset-0 w-full h-full z-0">
+        <Image
+          src="https://res.cloudinary.com/drxigvlxc/image/upload/v1781426104/Frame_2147226432_t1v321.png"
+          alt="contact Background"
+          fill
+          className="object-cover"
+          priority
+        />
+      </div>
       {/* Background Decor */}
       <div className="absolute top-0 left-0 w-full h-full">
         <div className="absolute top-20 right-10 opacity-10">
@@ -50,55 +62,67 @@ export default function OurCommitment() {
 
       <div className="container mx-auto px-6 relative z-10">
         <AnimateOnView direction="up">
-        <div className="text-center mb-16">
-          <h3 className="text-sm font-bold uppercase tracking-[0.3em] text-[#0052FF] mb-3">
-            OUR COMMITMENT
-          </h3>
-          <h2 className="text-[36px] lg:text-[48px] font-bold text-[#1E1E1E] mb-4">
-            We're <span className="text-[#0052FF]">Committed</span> To Your Growth
-          </h2>
-          <p className="text-[#4B5563] text-lg max-w-2xl mx-auto">
-            We Don't Just Provide Services — We Build Partnerships. Our Commitment Drives Everything We Do.
-          </p>
-        </div>
+          <div className="text-center mb-16">
+            <h3 className="text-sm font-bold uppercase tracking-[0.3em] text-[#0052FF] mb-3">
+              OUR COMMITMENT
+            </h3>
+            <h2 className="text-[36px] lg:text-[48px] font-bold text-[#1E1E1E] mb-4">
+              We're <span className="text-[#0052FF]">Committed</span> To Your Growth
+            </h2>
+            <p className="text-[#4B5563] text-lg max-w-2xl mx-auto">
+              We Don't Just Provide Services — We Build Partnerships. Our Commitment Drives Everything We Do.
+            </p>
+          </div>
         </AnimateOnView>
 
         {/* Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
           {commitmentData.map((item, idx) => (
             <AnimateOnView key={idx} direction="up" delay={idx * 0.1}>
-            <div key={idx} className="bg-white p-10 rounded-[32px] shadow-[0_10px_40px_rgba(0,0,0,0.08)] border-t-4 border-blue-500 hover:shadow-2xl hover:shadow-blue-500/15 transition-all duration-300 text-center">
-              <div className="w-20 h-20 bg-gradient-to-br from-[#0052FF]/10 to-[#0052FF]/5 rounded-full flex items-center justify-center mb-6 mx-auto border-4 border-[#0052FF]/20">
-                {item.icon}
+              <div key={idx} className="bg-white p-3 w-full h-full rounded-[32px] shadow-[0_10px_40px_rgba(0,0,0,0.08)] hover:shadow-2xl hover:shadow-blue-500/15 transition-all duration-300 text-center"
+                style={{
+                  borderBottom: `3px solid ${item.iconColor}`,
+                }}>
+                <div className="w-56 h-56 flex items-center justify-center mx-auto">
+                  <Image
+                    src={item.icon}
+                    alt={item.title}
+                    width={40}
+                    height={40}
+                    className="object-contain w-full h-full"
+                    priority
+                    loading="eager"
+                    unoptimized
+                  />
+                </div>
+                <h3 className="text-xl font-bold text-[#0154EE] mb-3">{item.title}</h3>
+                <p className="text-[#4B5563] leading-relaxed">{item.description}</p>
               </div>
-              <h3 className="text-xl font-bold text-[#1E1E1E] mb-3">{item.title}</h3>
-              <p className="text-[#4B5563] leading-relaxed">{item.description}</p>
-            </div>
             </AnimateOnView>
           ))}
         </div>
 
         {/* Bottom Banner */}
         <AnimateOnView direction="up" delay={0.4}>
-        <div className="bg-gradient-to-r from-blue-50 to-white p-8 rounded-2xl border border-blue-100 shadow-lg flex flex-col lg:flex-row items-center justify-center gap-8">
-          <div className="flex-shrink-0">
-            <Image
-              src="https://res.cloudinary.com/drg82xgxc/image/upload/v1781102082/IP_logo2_1_1_1_ako1wn.png"
-              alt="IP Softlink"
-              width={120}
-              height={120}
-              className="object-contain"
-            />
+          <div className="bg-gradient-to-r from-blue-50 to-white p-2 rounded-2xl border border-blue-100 shadow-lg flex flex-col lg:flex-row items-center justify-center gap-8">
+            <div className="flex-shrink-0">
+              <Image
+                src="https://res.cloudinary.com/drg82xgxc/image/upload/v1781102082/IP_logo2_1_1_1_ako1wn.png"
+                alt="IP Softlink"
+                width={120}
+                height={120}
+                className="object-contain"
+              />
+            </div>
+            <div className="text-center lg:text-left">
+              <h3 className="text-2xl font-bold text-[#1E1E1E] mb-2">
+                At IP SoftLink, We are committed to helping brands.
+              </h3>
+              <p className="text-[#4B5563] text-lg">
+                Connect. Secure. Solve. Grow.
+              </p>
+            </div>
           </div>
-          <div className="text-center lg:text-left">
-            <h3 className="text-2xl font-bold text-[#1E1E1E] mb-2">
-              At IP SoftLink, We are committed to helping brands.
-            </h3>
-            <p className="text-[#4B5563] text-lg">
-              Connect. Secure. Solve. Grow.
-            </p>
-          </div>
-        </div>
         </AnimateOnView>
       </div>
     </section>

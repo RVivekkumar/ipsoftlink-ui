@@ -7,34 +7,42 @@ const benefitsData = [
   {
     title: "Improved Productivity",
     description: "Automate repetitive tasks and enable teams to focus on strategic business activities.",
+    icon: "https://res.cloudinary.com/drxigvlxc/image/upload/v1781428662/Frame_1_lzntoc.png",
   },
   {
     title: "Real-Time Business Insights",
     description: "Access accurate data and reports instantly for faster decision-making.",
+    icon: "https://res.cloudinary.com/drxigvlxc/image/upload/v1781428524/Frame_2_adej1c.png",
   },
   {
     title: "Centralized Data",
     description: "Store and manage all business information from a single unified platform.",
+    icon: "https://res.cloudinary.com/drxigvlxc/image/upload/v1781428524/Frame_3_pwfdl5.png",
   },
   {
     title: "Increased Data Security",
     description: "Protect sensitive business information with advanced security and access controls.",
+    icon: "https://res.cloudinary.com/drxigvlxc/image/upload/v1781428522/Frame_4_jlz4kk.png",
   },
   {
     title: "Enhanced Collaboration",
     description: "Improve communication and workflow access across departments with connected processes.",
+    icon: "https://res.cloudinary.com/drxigvlxc/image/upload/v1781428521/Frame_5_jwkpev.png",
   },
   {
     title: "Better Customer Experience",
     description: "Deliver faster service and improve customer satisfaction through streamlined operations.",
+    icon: "https://res.cloudinary.com/drxigvlxc/image/upload/v1781428520/Frame_6_bvvb7y.png",
   },
   {
     title: "Cost Reduction",
     description: "Reduce operational costs by eliminating manual processes and inefficiencies.",
+    icon: "https://res.cloudinary.com/drxigvlxc/image/upload/v1781428514/Frame_7_dt8jxh.png",
   },
   {
     title: "Scalability & Flexibility",
     description: "Adapt and grow your ERP system as your business expands.",
+    icon: "https://res.cloudinary.com/drxigvlxc/image/upload/v1781428662/Frame_1_lzntoc.png",
   },
 ];
 
@@ -71,14 +79,19 @@ export default function ERPBenefits() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {benefitsData.map((item, idx) => (
             <AnimateOnView key={idx} direction="up" delay={idx * 0.1}>
-              <div className="bg-white p-6 rounded-[28px] shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100">
-                <div className="w-full aspect-square rounded-[20px] bg-gradient-to-br from-blue-100 to-purple-100 flex items-center justify-center mb-4 overflow-hidden">
-                  <div className="text-center p-4">
-                    <p className="font-bold text-blue-500 mb-2">Cloudinary Image</p>
-                    <p className="text-xs text-gray-400">Benefit Illustration</p>
-                  </div>
+              <div className="bg-white p-6 w-full h-full rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100">
+                  <div className="w-full flex items-center justify-center my-3">
+                  <Image
+                      src={item.icon}
+                      alt={item.title}
+                      width={350}
+                      height={350}
+                      className="object-contain"
+                      priority={true}
+                      unoptimized={true}
+                    />
                 </div>
-                <h3 className="text-lg font-bold text-[#0052FF] mb-3">{item.title}</h3>
+                <h3 className="text-lg font-bold text-[#0154EE] mb-3">{item.title}</h3>
                 <p className="text-[#4B5563] leading-relaxed text-sm">{item.description}</p>
               </div>
             </AnimateOnView>
