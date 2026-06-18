@@ -6,6 +6,10 @@ import CRMHero from "@/components/crm/CRMHero";
 import CounterSection from "@/components/CounterSection";
 import CustomerRelationship from "@/components/crm/CustomerRelationship";
 import CRMIndustries from "@/components/crm/CRMIndustries";
+import CRMDashboard from "@/components/crm/CRMDashboard";
+import WhyChooseCRM from "@/components/crm/WhyChooseCRM";
+import CRMSolution from "@/components/crm/CRMSolution";
+import CRMKeyModule from "@/components/crm/CRMKeyModule";
 
 export const metadata: Metadata = {
   title: "CRM Solutions - IP Softlink",
@@ -45,8 +49,12 @@ export default function CRMPage() {
       <Navbar />
       <CRMHero />
       <CounterSection/>
+      <WhyChooseCRM />
       <CustomerRelationship />
       <CRMIndustries/>
+      <CRMSolution />
+      <CRMKeyModule/>
+      <CRMDashboard/>
       <ConsultationSection />
       <Footer />
     </main>

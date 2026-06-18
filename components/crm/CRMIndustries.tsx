@@ -5,40 +5,40 @@ import AnimateOnView from "@/components/ui/AnimateOnView";
 
 const industriesData = [
   {
-    name: "Healthcare",
-    icon: "https://res.cloudinary.com/drxigvlxc/image/upload/v1781426408/Ellipse_1496_qb50gl.png",
+    name: "School CRM",
+    icon: "https://res.cloudinary.com/drxigvlxc/image/upload/v1781792201/Ellipse_1496_o0xetg.png",
   },
   {
-    name: "Retail & E-Commerce",
-    icon: "https://res.cloudinary.com/drxigvlxc/image/upload/v1781426408/Ellipse_1496_qb50gl.png",
+    name: "Raal Estate CRM",
+    icon: "https://res.cloudinary.com/drxigvlxc/image/upload/v1781792208/Ellipse_1496_1_tuluyb.png",
   },
   {
-    name: "Manufacturing",
-    icon: "https://res.cloudinary.com/drxigvlxc/image/upload/v1781426408/Ellipse_1496_qb50gl.png",
+    name: "Retail & Ecommerce CRM",
+    icon: "https://res.cloudinary.com/drxigvlxc/image/upload/v1781792207/Ellipse_1496_2_h77u1s.png",
   },
   {
-    name: "Education",
-    icon: "https://res.cloudinary.com/drxigvlxc/image/upload/v1781426408/Ellipse_1496_qb50gl.png",
+    name: "Education CRM",
+    icon: "https://res.cloudinary.com/drxigvlxc/image/upload/v1781792205/Ellipse_1496_3_a91qmf.png",
   },
   {
-    name: "Construction",
-    icon: "https://res.cloudinary.com/drxigvlxc/image/upload/v1781426408/Ellipse_1496_qb50gl.png",
+    name: "Financial Services CRM",
+    icon: "https://res.cloudinary.com/drxigvlxc/image/upload/v1781792205/Ellipse_1496_4_i8hxnh.png",
   },
   {
-    name: "Logistics & Supply Chain",
-    icon: "https://res.cloudinary.com/drxigvlxc/image/upload/v1781426408/Ellipse_1496_qb50gl.png",
+    name: "Logistics & Transportation CRM",
+    icon: "https://res.cloudinary.com/drxigvlxc/image/upload/v1781792201/Ellipse_1496_o0xetg.png",
   },
   {
-    name: "Corporate Enterprises",
-    icon: "https://res.cloudinary.com/drxigvlxc/image/upload/v1781426408/Ellipse_1496_qb50gl.png",
+    name: "Manufacturing CRM",
+    icon: "https://res.cloudinary.com/drxigvlxc/image/upload/v1781792203/Ellipse_1496_5_wqwyoy.png",
   },
   {
-    name: "Agriculture",
-    icon: "https://res.cloudinary.com/drxigvlxc/image/upload/v1781426408/Ellipse_1496_qb50gl.png",
+    name: "Hospitality CRM",
+    icon: "https://res.cloudinary.com/drxigvlxc/image/upload/v1781792202/Ellipse_1496_7_wvrgmr.png",
   },
   {
-    name: "Pharmaceuticals",
-    icon: "https://res.cloudinary.com/drxigvlxc/image/upload/v1781426408/Ellipse_1496_qb50gl.png",
+    name: "Travel & Tourism CRM",
+    icon: "https://res.cloudinary.com/drxigvlxc/image/upload/v1781792201/Ellipse_1496_8_nhnzlr.png",
   },
 ];
 

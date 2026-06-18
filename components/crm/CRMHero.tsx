@@ -9,7 +9,7 @@ export default function CRMHero() {
         <section className="pt-48 pb-24 lg:py-48 relative overflow-hidden">
             <div className="absolute inset-0 w-full h-full z-0">
                 <Image
-                    src="https://res.cloudinary.com/drxigvlxc/image/upload/v1781422413/Frame_2147225832_l27214.png"
+                    src="https://res.cloudinary.com/drxigvlxc/image/upload/v1781791227/Frame_2147226486_vkinda.png"
                     alt="contact Background"
                     fill
                     className="object-cover"
@@ -62,16 +62,15 @@ export default function CRMHero() {
 
                     {/* Right Image */}
                     <AnimateOnView direction="left" delay={0.4} className="lg:w-1/2 relative">
-                        <div className="relative w-full aspect-[4/3] rounded-[32px] overflow-hidden shadow-2xl">
+                        <div className="relative w-full aspect-[4/3] rounded-[32px] overflow-hidden">
                             <div className="absolute inset-0 flex items-center justify-center text-center p-10 text-blue-400 z-10">
                                 <Image
-                                    src="https://res.cloudinary.com/drg82xgxc/image/upload/v1781102082/IP_logo2_1_1_1_ako1wn.png"
+                                    src="https://res.cloudinary.com/drxigvlxc/image/upload/v1781791213/ChatGPT_Image_Jun_14_2026_04_08_00_PM_1_1_riad79.png"
                                     alt="Digital Marketing"
                                     fill
-                                    className="object-cover opacity-10"
+                                    className="object-cover"
                                 />
                             </div>
-
                         </div>
                     </AnimateOnView>
                 </div>
