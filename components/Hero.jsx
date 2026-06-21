@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center">
+    <section className="relative min-h-screen flex items-end py-4 md:py-10">
       <Image
         src="https://res.cloudinary.com/drg82xgxc/image/upload/v1781101698/Frame_2147225661_ltzmxm.png"
         alt="Hero Background"

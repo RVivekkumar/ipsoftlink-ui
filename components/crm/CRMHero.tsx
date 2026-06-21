@@ -61,16 +61,19 @@ export default function CRMHero() {
                     </div>
 
                     {/* Right Image */}
-                    <AnimateOnView direction="left" delay={0.4} className="lg:w-1/2 relative">
+                    <AnimateOnView
+                        direction="left"
+                        delay={0.4}
+                        className="w-full lg:w-1/2 relative"
+                    >
                         <div className="relative w-full aspect-[4/3] rounded-[32px] overflow-hidden">
-                            <div className="absolute inset-0 flex items-center justify-center text-center p-10 text-blue-400 z-10">
-                                <Image
-                                    src="https://res.cloudinary.com/drxigvlxc/image/upload/v1781791213/ChatGPT_Image_Jun_14_2026_04_08_00_PM_1_1_riad79.png"
-                                    alt="Digital Marketing"
-                                    fill
-                                    className="object-cover"
-                                />
-                            </div>
+                            <Image
+                                src="https://res.cloudinary.com/drxigvlxc/image/upload/v1781791213/ChatGPT_Image_Jun_14_2026_04_08_00_PM_1_1_riad79.png"
+                                alt="Digital Marketing"
+                                fill
+                                className="object-contain"
+                                priority
+                            />
                         </div>
                     </AnimateOnView>
                 </div>

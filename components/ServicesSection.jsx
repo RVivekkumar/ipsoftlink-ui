@@ -8,18 +8,19 @@ import AnimateOnView from "./ui/AnimateOnView";
 export default function ServicesSection() {
   return (
     <section className="relative py-24 overflow-hidden">
+
       {/* Background */}
       <Image
         src="https://res.cloudinary.com/drg82xgxc/image/upload/v1781101699/Frame_1686552865_y0vckg.png"
         alt="services bg"
         fill
         priority
-        className="object-cover"
+        className="object-cover -z-10"
       />
 
-      {/* <div className="absolute inset-0 bg-white/70" /> */}
-
+      {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-6">
+
         {/* Heading */}
         <AnimateOnView>
           <div className="text-center mb-16">
@@ -44,7 +45,7 @@ export default function ServicesSection() {
         {/* Grid */}
         <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-8">
           {services.map((service, index) => (
-            <AnimateOnView key={index} delay={index * 0.1}>
+            <AnimateOnView key={index} delay={index * 0.1} direction="up">
               <div
                 className="
                 relative
@@ -53,12 +54,14 @@ export default function ServicesSection() {
                 border
                 border-[#4F7DFF]
                 p-8
+                w-full
+                h-full
                 shadow-lg
                 hover:shadow-2xl
                 transition-all
                 duration-300
                 hover:-translate-y-2
-              "
+                overflow-hidden"
               >
                 {/* Top Left Image */}
                 <div className="mb-6">
@@ -72,7 +75,7 @@ export default function ServicesSection() {
                 </div>
 
                 {/* Decorative Circle */}
-                <div className="absolute top-5 right-5 w-16 h-16 rounded-full bg-blue-100" />
+                <div className="absolute -top-3 -right-2 w-16 h-16 rounded-full bg-blue-100" />
 
                 {/* Content */}
                 <h3 className="text-xl font-bold text-blue-700 mb-4 relative z-10">
@@ -86,20 +89,20 @@ export default function ServicesSection() {
                 <Link
                   href="#"
                   className="
-                  inline-flex
-                  items-center
-                  gap-2
-                  mt-6
-                  bg-blue-600
-                  hover:bg-blue-700
-                  text-white
-                  px-4
-                  py-2
-                  rounded-lg
-                  text-sm
-                  font-medium
-                  relative z-10
-                "
+                    inline-flex
+                    items-center
+                    gap-2
+                    mt-6
+                    bg-blue-600
+                    hover:bg-blue-700
+                    text-white
+                    px-4
+                    py-2
+                    rounded-lg
+                    text-sm
+                    font-medium
+                    relative z-10
+                  "
                 >
                   Learn More →
                 </Link>
@@ -107,6 +110,7 @@ export default function ServicesSection() {
             </AnimateOnView>
           ))}
         </div>
+
       </div>
     </section>
   );

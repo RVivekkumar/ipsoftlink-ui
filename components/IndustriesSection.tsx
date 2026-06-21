@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import AnimateOnView from "./ui/AnimateOnView";
 
 const industries = [
   {
@@ -73,77 +74,87 @@ export default function IndustriesSection() {
       <div className="max-w-6xl mx-auto">
 
         {/* Heading */}
-        <div className="text-center mb-14">
-  <p className="text-[#0052FF] text-sm font-medium mb-3">
-    Expertise & Industry
-  </p>
+        <AnimateOnView direction="up">
+          <div className="text-center mb-14">
+            <p className="text-[#0052FF] text-sm font-medium mb-3">
+              Expertise & Industry
+            </p>
 
-  <h2 className="text-[42px] font-bold text-[#111827]">
-    Software Solutions for{" "}
-    <span className="text-[#0052FF]">
-      Multiple Industries
-    </span>
-  </h2>
-</div>
+            <h2 className="text-[42px] font-bold text-[#111827]">
+              Software Solutions for{" "}
+              <span className="text-[#0052FF]">
+                Multiple Industries
+              </span>
+            </h2>
+          </div>
+        </AnimateOnView>
 
         {/* Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {industries.map((item, i) => (
-          <div
-  key={i}
-  className="
-    bg-white
-    border
-    border-[#1E40AF]
-    rounded-[10px]
-    p-3
-    flex
-    flex-col
-    transition-all
-    duration-300
-    hover:shadow-xl
-    hover:-translate-y-1
-  "
->
-  {/* Image */}
-  <div className="relative h-[160px] w-full overflow-hidden rounded-[6px]">
-    <Image
-      src={item.image}
-      alt={item.title}
-      fill
-      className="object-cover"
-    />
-  </div>
+            <AnimateOnView
+              key={i}
+              direction="up"
+              delay={i * 0.12}
+            >
+              <div
+                className="
+                  bg-white
+                  border
+                  border-[#1E40AF]
+                  rounded-[10px]
+                  p-3
+                  flex
+                  flex-col
+                  transition-all
+                  duration-300
+                  hover:shadow-xl
+                  hover:-translate-y-1
+                "
+              >
+                {/* Image */}
+                <div className="relative h-[160px] w-full overflow-hidden rounded-[6px]">
+                  <Image
+                    src={item.image}
+                    alt={item.title}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
 
-  {/* Content */}
-  <div className="pt-4">
-    <h3 className="text-[#0052FF] text-[18px] font-semibold mb-2">
-      {item.title}
-    </h3>
+                {/* Content */}
+                <div className="pt-4">
+                  <h3 className="text-[#0052FF] text-[18px] font-semibold mb-2">
+                    {item.title}
+                  </h3>
 
-    <p className="text-[12px] leading-5 text-[#555] min-h-[72px]">
-      {item.description}
-    </p>
+                  <p className="text-[12px] leading-5 text-[#555] min-h-[72px]">
+                    {item.description}
+                  </p>
 
-    <button
-      className="
-        mt-4
-        h-[32px]
-        px-4
-        rounded-md
-        text-white
-        text-[12px]
-        font-medium
-      "
-      style={{
-        background:
-          "linear-gradient(100.91deg,#0181FE -1.59%,#0077F9 21.16%,#0042BF 41.54%,#012586 60.02%,#011766 78.5%,#000946 96.99%)",
-      }}
-    >
-      Explore →
-    </button>
-  </div>
-</div>
+                  <button
+                    className="
+                      mt-4
+                      h-[32px]
+                      px-4
+                      rounded-md
+                      text-white
+                      text-[12px]
+                      font-medium
+                      hover:scale-105
+                      transition-transform
+                      duration-300
+                    "
+                    style={{
+                      background:
+                        "linear-gradient(100.91deg,#0181FE -1.59%,#0077F9 21.16%,#0042BF 41.54%,#012586 60.02%,#011766 78.5%,#000946 96.99%)",
+                    }}
+                  >
+                    Explore →
+                  </button>
+                </div>
+              </div>
+            </AnimateOnView>
           ))}
         </div>
 

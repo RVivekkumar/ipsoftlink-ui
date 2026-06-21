@@ -1,5 +1,7 @@
 "use client";
 
+import AnimateOnView from "../ui/AnimateOnView";
+
 const REASONS = [
   {
     icon: "https://res.cloudinary.com/drg82xgxc/image/upload/v1781256409/Frame_2147225754_8_mre3ni.png",
@@ -37,81 +39,83 @@ export default function WhyChooseConsultingSection() {
   return (
     <section className="relative w-full overflow-hidden py-14 px-4">
 
-      {/* ── Background ── */}
-      {/* eslint-disable-next-line @next/next/no-img-element */}
+      {/* Background */}
       <img
         src="https://res.cloudinary.com/drg82xgxc/image/upload/v1781259098/Frame_2147225798_hwgk2x.png"
         alt=""
         aria-hidden="true"
-        className="absolute inset-0 w-full h-full"
+        className="absolute inset-0 w-full h-full object-cover"
       />
+
       <div className="absolute inset-0 bg-white/15" />
 
       <div className="relative z-10 max-w-6xl mx-auto">
+
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
 
-          {/* ══════════════════════════════════
-              LEFT: heading + subtitle + para + photo
-          ══════════════════════════════════ */}
-          <div className="flex flex-col gap-5">
+          {/* LEFT SIDE */}
+          <AnimateOnView direction="left" delay={0.1}>
+            <div className="flex flex-col gap-5">
 
-            {/* Heading */}
-            <h2 className="text-3xl md:text-4xl lg:text-[42px] font-extrabold text-slate-900 leading-tight">
-              Why Choose
-              <br />
-              <span className="text-blue-600">IP Softlink Consulting?</span>
-            </h2>
+              <h2 className="text-3xl md:text-4xl lg:text-[42px] font-extrabold text-slate-900 leading-tight">
+                Why Choose
+                <br />
+                <span className="text-blue-600">IP Softlink Consulting?</span>
+              </h2>
 
-            {/* Bold subtitle */}
-            <p className="text-slate-900 font-bold text-[14px] md:text-[15px] leading-snug max-w-[380px]">
-              Strategic Technology Guidance for Sustainable Business Growth
-            </p>
+              <p className="text-slate-900 font-bold text-[14px] md:text-[15px] leading-snug max-w-[380px]">
+                Strategic Technology Guidance for Sustainable Business Growth
+              </p>
 
-            {/* Paragraph */}
-            <p className="text-slate-600 text-[13.5px] md:text-[14px] leading-relaxed max-w-[400px]">
-              We help organizations make smarter technology decisions, optimize operations,
-              and build scalable digital solutions that drive measurable business outcomes.
-            </p>
+              <p className="text-slate-600 text-[13.5px] md:text-[14px] leading-relaxed max-w-[400px]">
+                We help organizations make smarter technology decisions, optimize operations,
+                and build scalable digital solutions that drive measurable business outcomes.
+              </p>
 
-            {/* Left office photo */}
-            <div className="mt-2">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="https://res.cloudinary.com/drg82xgxc/image/upload/v1781256416/ChatGPT_Image_Jun_5_2026_10_40_42_PM_1_x23mxv.png"
-                alt="IT consulting team meeting"
-                className="w-full max-w-[480px] rounded-2xl object-cover shadow-lg"
-              />
-            </div>
-
-          </div>
-
-          {/* ══════════════════════════════════
-              RIGHT: 6 rows — icon + title + desc
-          ══════════════════════════════════ */}
-          <div className="flex flex-col gap-6 pt-2">
-            {REASONS.map((item, i) => (
-              <div key={i} className="flex items-start gap-4">
-
-                {/* Icon image — loaded as-is, square rounded */}
-                {/* eslint-disable-next-line @next/next/no-img-element */}
+              <div className="mt-2 overflow-hidden rounded-2xl shadow-lg">
                 <img
-                  src={item.icon}
-                  alt={item.title}
-                  className="w-12 h-12 object-contain rounded-xl shrink-0"
+                  src="https://res.cloudinary.com/drg82xgxc/image/upload/v1781256416/ChatGPT_Image_Jun_5_2026_10_40_42_PM_1_x23mxv.png"
+                  alt="IT consulting team meeting"
+                  className="w-full max-w-[480px] object-cover"
                 />
-
-                {/* Text */}
-                <div className="flex flex-col gap-1">
-                  <h4 className="text-slate-900 font-bold text-[14.5px] md:text-[15.5px] leading-snug">
-                    {item.title}
-                  </h4>
-                  <p className="text-slate-500 text-[12.5px] md:text-[13px] leading-relaxed">
-                    {item.desc}
-                  </p>
-                </div>
-
               </div>
+
+            </div>
+          </AnimateOnView>
+
+          {/* RIGHT SIDE */}
+          <div className="flex flex-col gap-6 pt-2">
+
+            {REASONS.map((item, i) => (
+              <AnimateOnView
+                key={i}
+                direction="right"
+                delay={i * 0.12}
+              >
+                <div className="flex items-start gap-4 group">
+
+                  {/* Icon */}
+                  <img
+                    src={item.icon}
+                    alt={item.title}
+                    className="w-12 h-12 object-contain rounded-xl shrink-0 transition-transform duration-300 group-hover:scale-110"
+                  />
+
+                  {/* Text */}
+                  <div className="flex flex-col gap-1">
+                    <h4 className="text-slate-900 font-bold text-[14.5px] md:text-[15.5px] leading-snug">
+                      {item.title}
+                    </h4>
+
+                    <p className="text-slate-500 text-[12.5px] md:text-[13px] leading-relaxed">
+                      {item.desc}
+                    </p>
+                  </div>
+
+                </div>
+              </AnimateOnView>
             ))}
+
           </div>
 
         </div>

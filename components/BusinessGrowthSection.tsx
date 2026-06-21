@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { CheckCircle2 } from "lucide-react";
+import AnimateOnView from "./ui/AnimateOnView";
 
 const benefits = [
   {
@@ -38,18 +39,15 @@ const DEV_IMAGE =
 export default function BusinessGrowthSection() {
   return (
     <section
-  className="relative overflow-hidden py-24"
-  style={{
-    backgroundImage:
-      "url('https://res.cloudinary.com/drg82xgxc/image/upload/v1781101697/Frame_2147225663_jtvalg.png')",
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-    backgroundRepeat: "no-repeat",
-  }}
->
-
-      {/* 🔥 Overlay (important for readability) */}
-
+      className="relative overflow-hidden py-24"
+      style={{
+        backgroundImage:
+          "url('https://res.cloudinary.com/drxigvlxc/image/upload/v1781101697/Frame_2147225663_jtvalg.png')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
       {/* Top Left Dots */}
       <div className="absolute top-0 left-0 opacity-30 z-10">
         <div
@@ -90,119 +88,132 @@ export default function BusinessGrowthSection() {
       </div>
 
       <div className="container mx-auto px-6 relative z-20">
-        
         {/* Heading */}
-        <div className="text-center max-w-6xl mx-auto">
-          <p className="text-blue-600 text-xl md:text-2xl mb-6 font-medium">
-            Solutions that Drive Growth
-          </p>
+        <AnimateOnView direction="up">
+          <div className="text-center max-w-6xl mx-auto">
+            <p className="text-blue-600 text-xl md:text-2xl mb-6 font-medium">
+              Solutions that Drive Growth
+            </p>
 
-          <h2 className="font-bold text-4xl md:text-5xl lg:text-6xl leading-tight text-black">
-            Business-Focused <span className="text-[#2563EB]">Software Development</span>
-          </h2>
+            <h2 className="font-bold text-4xl md:text-5xl lg:text-6xl leading-tight text-black">
+              Business-Focused{" "}
+              <span className="text-[#2563EB]">
+                Software Development
+              </span>
+            </h2>
 
-          <p className="mt-6 text-lg md:text-2xl text-gray-800 max-w-4xl mx-auto">
-            We don't just write code. We build solutions that solve
-            real business problems and drive measurable growth.
-          </p>
-        </div>
-
-        {/* Content */}
-       <div className="grid lg:grid-cols-[1.15fr_0.85fr] gap-10 items-start mt-16">
-
-  {/* Left Side Full Image */}
-  <div className="relative">
-    <Image
-      src={DEV_IMAGE}
-      alt="Business Development"
-      width={900}
-      height={700}
-      className="w-full h-auto"
-      priority
-    />
-  </div>
-
-  {/* Right Side */}
-  <div className="relative">
-
-<div
-  className="
-    absolute
-    left-[-28px]
-    top-[53px]
-    bottom-[40px]
-    w-[2px]
-    h-[550px]
-    bg-[#0057FF]
-  "
-/>
-
-    <div className="space-y-5">
-      {benefits.map((item, index) => (
-       <div
-  key={index}
-  className="flex items-center gap-5 relative"
->
-  {/* Timeline Dot */}
- <div
-  className="
-    absolute
-    -left-[32px]
-    top-1/2
-    -translate-y-1/2
-    w-[12px]
-    h-[12px]
-    rounded-full
-    bg-[#0057FF]
-    border-2
-    border-white
-    shadow-md
-    z-30
-  "
-/>
-          {/* Tick Image */}
-         
-          {/* Card */}
-          <div
-            className="
-              flex
-              gap-4
-              bg-white
-              rounded-xl
-              border
-              border-[#E5E7EB]
-              shadow-sm
-              px-5
-              py-4
-              w-full
-            "
-          >
-             <div className="relative z-10">
-           <Image
-  src={TICK_ICON}
-  alt=""
-  width={82}
-  height={82}
-  className="w-[82px] h-[82px] relative z-20"
-/>
-          </div>
-           <div>
-            <h3 className="font-semibold text-[18px] text-[#1F2937]">
-              {item.title}
-            </h3>
-
-            <p className="text-[13px] text-[#6B7280] mt-1">
-              {item.description}
+            <p className="mt-6 text-lg md:text-2xl text-gray-800 max-w-4xl mx-auto">
+              We don't just write code. We build solutions that solve
+              real business problems and drive measurable growth.
             </p>
           </div>
-          </div>
+        </AnimateOnView>
+
+        {/* Content */}
+        <div className="grid lg:grid-cols-[1.15fr_0.85fr] gap-10 items-start mt-16">
+          
+          {/* Left Image */}
+          <AnimateOnView direction="right">
+            <div className="relative">
+              <Image
+                src={DEV_IMAGE}
+                alt="Business Development"
+                width={900}
+                height={700}
+                className="w-full h-auto"
+                priority
+              />
+            </div>
+          </AnimateOnView>
+
+          {/* Right Side Timeline */}
+          <AnimateOnView direction="left">
+            <div className="relative">
+
+              <div
+                className="
+                  absolute
+                  left-[-28px]
+                  top-[53px]
+                  bottom-[40px]
+                  w-[2px]
+                  h-[550px]
+                  bg-[#0057FF]
+                "
+              />
+
+              <div className="space-y-5">
+                {benefits.map((item, index) => (
+                  <AnimateOnView
+                    key={index}
+                    direction="left"
+                    delay={index * 0.1}
+                  >
+                    <div className="flex items-center gap-5 relative">
+
+                      {/* Timeline Dot */}
+                      <div
+                        className="
+                          absolute
+                          -left-[32px]
+                          top-1/2
+                          -translate-y-1/2
+                          w-[12px]
+                          h-[12px]
+                          rounded-full
+                          bg-[#0057FF]
+                          border-2
+                          border-white
+                          shadow-md
+                          z-30
+                        "
+                      />
+
+                      {/* Card */}
+                      <div
+                        className="
+                          flex
+                          gap-4
+                          bg-white
+                          rounded-xl
+                          border
+                          border-[#E5E7EB]
+                          shadow-sm
+                          px-5
+                          py-4
+                          w-full
+                        "
+                      >
+                        <div className="relative z-10">
+                          <Image
+                            src={TICK_ICON}
+                            alt=""
+                            width={82}
+                            height={82}
+                            className="w-[82px] h-[82px] relative z-20"
+                          />
+                        </div>
+
+                        <div>
+                          <h3 className="font-semibold text-[18px] text-[#1F2937]">
+                            {item.title}
+                          </h3>
+
+                          <p className="text-[13px] text-[#6B7280] mt-1">
+                            {item.description}
+                          </p>
+                        </div>
+                      </div>
+
+                    </div>
+                  </AnimateOnView>
+                ))}
+              </div>
+
+            </div>
+          </AnimateOnView>
+
         </div>
-      ))}
-    </div>
-
-  </div>
-
-</div>
       </div>
     </section>
   );

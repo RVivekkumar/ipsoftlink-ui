@@ -67,11 +67,11 @@ export default function MobileAppDevSection() {
         </AnimateOnView>
 
         {/* ── 3-column grid: left boxes | center phone | right boxes ── */}
-        <div className="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] gap-6 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] gap-6 items-center justify-center">
 
           {/* ── LEFT column: 3 blue boxes ── */}
           <AnimateOnView direction="right">
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-4 items-center">
              {LEFT_BOXES.map((box, i) => (
                 <AnimateOnView key={i} delay={i*0.1} direction="right">
                   <div
@@ -109,7 +109,7 @@ export default function MobileAppDevSection() {
 
           {/* ── RIGHT column: 3 blue boxes ── */}
           <AnimateOnView direction="left" delay={0.3}>
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-4 items-center">
              {RIGHT_BOXES.map((box, i) => (
                 <AnimateOnView key={i} delay={i*0.1} direction="left">
                   <div

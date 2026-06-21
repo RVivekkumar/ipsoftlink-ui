@@ -9,7 +9,7 @@ export default function DigitalMarketingHero() {
     <section className="pt-48 pb-24 lg:py-48 relative overflow-hidden">
       <div className="absolute inset-0 w-full h-full z-0">
         <Image
-          src="https://res.cloudinary.com/drxigvlxc/image/upload/v1781422413/Frame_2147225832_l27214.png"
+          src="https://res.cloudinary.com/drxigvlxc/image/upload/v1782028235/Frame_2147226503_p5qcyl.png"
           alt="contact Background"
           fill
           className="object-cover"
@@ -63,22 +63,21 @@ export default function DigitalMarketingHero() {
           </div>
 
           {/* Right Image */}
-          {/* <AnimateOnView direction="left" delay={0.4} className="lg:w-1/2 relative">
-            <div className="relative w-full aspect-[4/3] rounded-[32px] overflow-hidden shadow-2xl">
-              <div className="absolute inset-0 flex items-center justify-center text-center p-10 text-blue-400 z-10">
-                <div>
-                  <p className="font-bold text-lg mb-2">Cloudinary Image Here</p>
-                  <p className="text-sm text-gray-400">Digital Marketing Illustration</p>
-                </div>
-              </div>
+          <AnimateOnView
+            direction="left"
+            delay={0.4}
+            className="w-full lg:w-1/2 relative"
+          >
+            <div className="relative w-full aspect-[4/3] rounded-[32px] overflow-hidden">
               <Image
-                src="https://res.cloudinary.com/drg82xgxc/image/upload/v1781102082/IP_logo2_1_1_1_ako1wn.png"
+                src="https://res.cloudinary.com/drxigvlxc/image/upload/v1782028235/ChatGPT_Image_Jun_19_2026_09_31_33_AM_1_ojqfig.png"
                 alt="Digital Marketing"
                 fill
-                className="object-cover opacity-10"
+                className="object-contain"
+                priority
               />
             </div>
-          </AnimateOnView> */}
+          </AnimateOnView>
         </div>
       </div>
     </section>
