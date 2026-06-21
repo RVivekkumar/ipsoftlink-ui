@@ -92,7 +92,7 @@ export default function Navbar() {
   }, []);
 
   return (
-    <header className="fixed top-6 left-0 right-0 z-[9999] flex justify-center px-4">
+    <header className="fixed top-0 md:top-6 left-0 right-0 z-[9999] flex justify-center px-0">
       <div
         className="
         w-full
@@ -100,7 +100,7 @@ export default function Navbar() {
         h-auto
         min-h-[50px]
         bg-white
-        rounded-[18px]
+        md:rounded-[18px]
         shadow-lg
         border border-[#E7EDF8]
         flex
@@ -258,100 +258,99 @@ export default function Navbar() {
           />
 
           {/* Menu Panel */}
-          <div className="absolute top-[70px] left-4 right-4 bg-white rounded-2xl shadow-2xl p-6 max-h-[80vh] overflow-y-auto">
-            <nav className="flex flex-col gap-4">
-              <Link
-                href="/"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="text-base font-medium text-[#1E1E1E] py-2"
-              >
-                Home
-              </Link>
+          <div className="absolute top-[60px] left-0 right-0 w-full bg-white shadow-2xl p-6 max-h-[80vh] overflow-y-auto">            <nav className="flex flex-col gap-4">
+            <Link
+              href="/"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="text-base font-medium text-[#1E1E1E] py-2"
+            >
+              Home
+            </Link>
 
-              {/* Mobile Services Dropdown */}
-              <div className="space-y-2">
-                <button
-                  className="flex items-center justify-between w-full text-left text-base font-medium text-[#1E1E1E] py-2"
-                  onClick={() => setServiceOpen(!serviceOpen)}
-                >
-                  Services
-                  <ChevronDown
-                    className={`w-4 h-4 transition-transform ${serviceOpen ? "rotate-180" : ""
-                      }`}
-                  />
-                </button>
-                {serviceOpen && (
-                  <div className="pl-4 space-y-2 border-l-2 border-blue-100">
-                    {serviceItems.map((item) => (
-                      <Link
-                        key={item.href}
-                        href={item.href}
-                        onClick={() => {
-                          setIsMobileMenuOpen(false);
-                          setServiceOpen(false);
-                        }}
-                        className="block py-2 text-sm text-gray-600 hover:text-blue-600"
-                      >
-                        {item.label}
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </div>
-
-              {/* Mobile Product Dropdown */}
-              <div className="space-y-2">
-                <button
-                  className="flex items-center justify-between w-full text-left text-base font-medium text-[#1E1E1E] py-2"
-                  onClick={() => setProductOpen(!productOpen)}
-                >
-                  Product
-                  <ChevronDown
-                    className={`w-4 h-4 transition-transform ${productOpen ? "rotate-180" : ""
-                      }`}
-                  />
-                </button>
-                {productOpen && (
-                  <div className="pl-4 space-y-2 border-l-2 border-blue-100">
-                    {productItems.map((item) => (
-                      <Link
-                        key={item.href}
-                        href={item.href}
-                        onClick={() => {
-                          setIsMobileMenuOpen(false);
-                          setProductOpen(false);
-                        }}
-                        className="block py-2 text-sm text-gray-600 hover:text-blue-600"
-                      >
-                        {item.label}
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </div>
-
-              {/* About Us Link */}
-              <Link
-                href="/about"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="text-base font-medium text-[#1E1E1E] py-2"
-              >
-                About Us
-              </Link>
-
-              {navLinks.slice(3).map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-base font-medium text-[#1E1E1E] py-2"
-                >
-                  {link.label}
-                </Link>
-              ))}
-
+            {/* Mobile Services Dropdown */}
+            <div className="space-y-2">
               <button
-                className="
+                className="flex items-center justify-between w-full text-left text-base font-medium text-[#1E1E1E] py-2"
+                onClick={() => setServiceOpen(!serviceOpen)}
+              >
+                Services
+                <ChevronDown
+                  className={`w-4 h-4 transition-transform ${serviceOpen ? "rotate-180" : ""
+                    }`}
+                />
+              </button>
+              {serviceOpen && (
+                <div className="pl-4 space-y-2 border-l-2 border-blue-100">
+                  {serviceItems.map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      onClick={() => {
+                        setIsMobileMenuOpen(false);
+                        setServiceOpen(false);
+                      }}
+                      className="block py-2 text-sm text-gray-600 hover:text-blue-600"
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {/* Mobile Product Dropdown */}
+            <div className="space-y-2">
+              <button
+                className="flex items-center justify-between w-full text-left text-base font-medium text-[#1E1E1E] py-2"
+                onClick={() => setProductOpen(!productOpen)}
+              >
+                Product
+                <ChevronDown
+                  className={`w-4 h-4 transition-transform ${productOpen ? "rotate-180" : ""
+                    }`}
+                />
+              </button>
+              {productOpen && (
+                <div className="pl-4 space-y-2 border-l-2 border-blue-100">
+                  {productItems.map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      onClick={() => {
+                        setIsMobileMenuOpen(false);
+                        setProductOpen(false);
+                      }}
+                      className="block py-2 text-sm text-gray-600 hover:text-blue-600"
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {/* About Us Link */}
+            <Link
+              href="/about"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="text-base font-medium text-[#1E1E1E] py-2"
+            >
+              About Us
+            </Link>
+
+            {navLinks.slice(3).map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="text-base font-medium text-[#1E1E1E] py-2"
+              >
+                {link.label}
+              </Link>
+            ))}
+
+            <button
+              className="
                   mt-2
                   w-full
                   text-white
@@ -362,14 +361,14 @@ export default function Navbar() {
                   rounded-full
                   shadow-lg
                 "
-                style={{
-                  background:
-                    "linear-gradient(100.91deg, #0181FE -1.59%, #0077F9 21.16%, #0042BF 41.54%, #012586 60.02%, #011766 78.5%, #000946 96.99%)",
-                }}
-              >
-                Get Demo
-              </button>
-            </nav>
+              style={{
+                background:
+                  "linear-gradient(100.91deg, #0181FE -1.59%, #0077F9 21.16%, #0042BF 41.54%, #012586 60.02%, #011766 78.5%, #000946 96.99%)",
+              }}
+            >
+              Get Demo
+            </button>
+          </nav>
           </div>
         </div>
       )}
