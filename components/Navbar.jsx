@@ -217,7 +217,8 @@ export default function Navbar() {
 
         {/* CTA Button */}
         <div className="hidden md:flex">
-          <button
+          <Link
+            href="/contact"
             className="
             text-white
             text-[13px]
@@ -236,7 +237,7 @@ export default function Navbar() {
             }}
           >
             Get Demo
-          </button>
+          </Link>
         </div>
 
         {/* Mobile Menu Button */}
@@ -349,7 +350,9 @@ export default function Navbar() {
               </Link>
             ))}
 
-            <button
+            <Link
+              href="/contact"
+              onClick={() => setIsMobileMenuOpen(false)}
               className="
                   mt-2
                   w-full
@@ -360,6 +363,8 @@ export default function Navbar() {
                   py-3
                   rounded-full
                   shadow-lg
+                  text-center
+                  block
                 "
               style={{
                 background:
@@ -367,7 +372,7 @@ export default function Navbar() {
               }}
             >
               Get Demo
-            </button>
+            </Link>
           </nav>
           </div>
         </div>

@@ -44,8 +44,8 @@ export default function ServicesSection() {
 
         {/* Grid */}
         <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-8">
-          {services.map((service, index) => (
-            <AnimateOnView key={index} delay={index * 0.1} direction="up">
+          {services?.length > 0 && services?.map((service, index) => (
+            <AnimateOnView key={service?.id} delay={index * 0.1} direction="up">
               <div
                 className="
                 relative
@@ -87,7 +87,7 @@ export default function ServicesSection() {
                 </p>
 
                 <Link
-                  href="#"
+                  href={service?.link}
                   className="
                     inline-flex
                     items-center

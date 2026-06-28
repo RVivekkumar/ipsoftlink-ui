@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Image from "next/image";
 
@@ -36,13 +37,13 @@ export default function ServicePage() {
             </p>
 
             <div className="mt-6 flex flex-col sm:flex-row gap-3">
-              <button className="w-full sm:w-auto bg-blue-600 text-white px-5 py-3 rounded-full hover:bg-blue-700 transition">
+              <Link href="/contact" className="w-full sm:w-auto bg-blue-600 text-white px-5 py-3 rounded-full hover:bg-blue-700 transition text-center">
                 Get Started
-              </button>
+              </Link>
 
-              <button className="w-full sm:w-auto border border-blue-600 text-blue-600 px-5 py-3 rounded-full hover:bg-blue-600 hover:text-white transition">
+              <Link href="/contact" className="w-full sm:w-auto border border-blue-600 text-blue-600 px-5 py-3 rounded-full hover:bg-blue-600 hover:text-white transition text-center">
                 Learn More
-              </button>
+              </Link>
             </div>
 
           </div>

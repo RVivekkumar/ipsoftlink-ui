@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
 
 export default function HeroSection() {
@@ -53,18 +54,20 @@ export default function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
             className="flex flex-wrap items-center gap-4 mt-2">
-            <button
+            <Link
+              href="/contact"
               className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm px-6 py-3 rounded-md transition-colors shadow-md hover:scale-105 transition-transform"
             >
               Explore Our Services
               <span className="text-base">→</span>
-            </button>
+            </Link>
 
-            <button
+            <Link
+              href="/contact"
               className="bg-white hover:bg-gray-100 text-slate-700 hover:text-blue-600 font-semibold text-sm px-6 py-3 rounded-md transition-colors shadow-md hover:scale-105 transition-transform"
             >
               View Our Work
-            </button>
+            </Link>
           </motion.div>
         </motion.div>
 

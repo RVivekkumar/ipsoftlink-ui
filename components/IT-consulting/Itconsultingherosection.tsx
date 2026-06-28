@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
 
 export default function ITConsultingHeroSection() {
@@ -54,12 +55,12 @@ export default function ITConsultingHeroSection() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="flex flex-wrap items-center gap-4 mt-1"
           >
-            <button className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm px-6 py-2.5 rounded-md transition-colors shadow-md hover:scale-105 transition-transform">
+            <Link href="/contact" className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm px-6 py-2.5 rounded-md transition-colors shadow-md hover:scale-105 transition-transform">
               Explore Our Service <span>→</span>
-            </button>
-            <button className="bg-white px-6 py-2.5 rounded-md flex items-center gap-2 text-slate-700 hover:text-blue-600 font-semibold text-sm transition-colors hover:scale-105 transition-transform">
+            </Link>
+            <Link href="/contact" className="bg-white px-6 py-2.5 rounded-md flex items-center gap-2 text-slate-700 hover:text-blue-600 font-semibold text-sm transition-colors hover:scale-105 transition-transform">
               View Our Work
-            </button>
+            </Link>
           </motion.div>
 
         </div>

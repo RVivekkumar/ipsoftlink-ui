@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
 
 export default function MobileAppHeroSection() {
@@ -53,12 +54,12 @@ export default function MobileAppHeroSection() {
             transition={{ duration: 0.8, delay: 0.5 }}
             className="flex flex-wrap items-center gap-4 mt-1"
           >
-            <button className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm px-6 py-3 rounded-md transition-colors shadow-md hover:scale-105 transition-transform">
+            <Link href="/contact" className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm px-6 py-3 rounded-md transition-colors shadow-md hover:scale-105 transition-transform">
               Explore Our Services <span>→</span>
-            </button>
-            <button className="bg-white px-4 py-3 flex items-center gap-2 text-slate-700 hover:text-blue-600 font-semibold text-sm transition-colors rounded-md hover:scale-105 transition-transform">
+            </Link>
+            <Link href="/contact" className="bg-white px-4 py-3 flex items-center gap-2 text-slate-700 hover:text-blue-600 font-semibold text-sm transition-colors rounded-md hover:scale-105 transition-transform">
               View Our Work
-            </button>
+            </Link>
           </motion.div>
         </motion.div>
 

@@ -1,12 +1,63 @@
-"use client";
+﻿"use client";
 
 import Image from "next/image";
+import { FormEvent, useState } from "react";
 import { Phone, MessageCircle, Plus } from "lucide-react";
 import AnimateOnView from "@/components/ui/AnimateOnView";
+import FormSubmitStatus, {
+  FormSubmitStatusType,
+} from "@/components/ui/FormSubmitStatus";
+import { getServiceRecipient, submitWeb3Form } from "@/lib/web3forms";
 
 export default function ContactFormSection() {
+  const [status, setStatus] = useState<FormSubmitStatusType>("idle");
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  // const [fileName, setFileName] = useState<string>("");
+
+  const dismissStatus = () => {
+    setStatus("idle");
+    setErrorMessage(null);
+  };
+
+  const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    event.stopPropagation();
+    setStatus("sending");
+    setErrorMessage(null);
+
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+    const name = String(formData.get("name") ?? "Visitor");
+    const service = String(formData.get("service") ?? "General Inquiry");
+    const routeTo = getServiceRecipient(service);
+
+    const result = await submitWeb3Form(form, {
+      subject: `[${service}] New Contact Form Submission from ${name}`,
+      fromName: "IP Softlink Website",
+      routeTo,
+      formType: "contact",
+    });
+
+    if (result.success) {
+      setStatus("success");
+      form.reset();
+      // setFileName("");
+    } else {
+      setStatus("error");
+      setErrorMessage(result.message ?? "Something went wrong. Please try again.");
+    }
+  };
+
   return (
+
     <section className="py-24 bg-white relative overflow-hidden">
+      <FormSubmitStatus
+        variant="toast"
+        status={status}
+        message={errorMessage}
+        successMessage="Your message has been sent! Our team will contact you within 24 hours."
+        onDismiss={dismissStatus}
+      />
       {/* Main Background Image */}
       <div className="absolute inset-0 w-full h-full z-0">
         <Image
@@ -104,25 +155,38 @@ export default function ContactFormSection() {
 
           {/* Right Column - Form */}
           <AnimateOnView direction="up" delay={0.5} className="lg:col-span-5 p-6 bg-white">
-            <form className="space-y-8">
-              <div className="grid grid-cols-1 gap-8">
-                <InputField label="Full Name" type="text" placeholder="Enter your full name" required />
-                <InputField label="E-Mail" type="email" placeholder="Enter your email address" required />
-                <InputField label="Phone/Mobile" type="tel" placeholder="Enter your phone number" required />
+            <form
+              className="space-y-8"
+              onSubmit={onSubmit}
+              action="#"
+              method="post"
+              noValidate={false}
+            >
+              <FormSubmitStatus status={status} message={errorMessage} onDismiss={dismissStatus} />
+
+              <div className="grid grid-cols-1 gap-8 text-black">
+                <InputField name="name" label="Full Name" type="text" placeholder="Enter your full name" required />
+                <InputField name="email" label="E-Mail" type="email" placeholder="Enter your email address" required />
+                <InputField name="phone" label="Phone/Mobile" type="tel" placeholder="Enter your phone number" required />
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 p-10">
-                   <SelectField label="Select Country" options={["India", "USA", "UK", "Other"]} required />
-                   <SelectField label="Select Services" options={["Software Development", "Mobile App Development", "IT Consulting", "Other"]} required />
+                   <SelectField name="country" label="Select Country" options={["India", "USA", "UK", "Other"]} required />
+                   <SelectField name="service" label="Select Services" options={["Software Development", "Mobile App Development", "IT Consulting", "Other"]} required />
                 </div>
 
-                <InputField label="Attach Document" type="file" />
+                {/* <FileField
+                  fileName={fileName}
+                  onFileChange={setFileName}
+                /> */}
 
                 <div className="relative">
                    <label className="block text-sm font-bold text-[#1E1E1E] mb-3 uppercase tracking-wider">How can we help you ?</label>
                    <textarea 
+                    name="message"
                     rows={4}
                     placeholder="Tell us about your project or inquiry"
                     className="w-full px-0 py-3 bg-transparent border-b-2 border-gray-100 focus:outline-none focus:border-blue-600 transition-all resize-none placeholder:text-gray-300"
+                    required
                    ></textarea>
                 </div>
               </div>
@@ -136,9 +200,10 @@ export default function ContactFormSection() {
 
               <button 
                 type="submit"
-                className="w-full py-5 bg-[#0052FF] hover:bg-blue-700 text-white text-lg font-bold rounded-2xl shadow-xl shadow-blue-500/20 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
+                disabled={status === "sending"}
+                className="w-full py-5 bg-[#0052FF] hover:bg-blue-700 disabled:opacity-60 disabled:cursor-not-allowed text-white text-lg font-bold rounded-2xl shadow-xl shadow-blue-500/20 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
               >
-                Submit
+                {status === "sending" ? "Sending..." : "Submit"}
               </button>
             </form>
           </AnimateOnView>
@@ -167,30 +232,40 @@ function ContactInfoBox({ icon, title, description, linkText, href }: any) {
   );
 }
 
-function InputField({ label, type, ...props }: any) {
-  if (type === 'file') {
-    return (
-      <div className="relative">
-        <label className="block text-sm font-bold text-[#1E1E1E] mb-3 uppercase tracking-wider">
-          {label}
-        </label>
-        <div className="relative">
-          <input 
-            type="file" 
-            className="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10"
-            {...props}
-          />
-          <div className="w-full px-0 py-3 bg-transparent border-b-2 border-gray-100 flex items-center justify-between group">
-            <span className="text-gray-300">Upload document</span>
-            <div className="w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center group-hover:bg-blue-600 group-hover:text-white transition-all">
-              <Plus className="w-4 h-4" />
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-  }
+// function FileField({
+//   fileName,
+//   onFileChange,
+// }: {
+//   fileName: string;
+//   onFileChange: (name: string) => void;
+// }) {
+//   return (
+//     <div className="relative">
+//       <label className="block text-sm font-bold text-[#1E1E1E] mb-3 uppercase tracking-wider">
+//         Attach Document
+//       </label>
+//       <div className="relative">
+//         <input
+//           type="file"
+//           name="attachment"
+//           accept=".pdf,.doc,.docx,.png,.jpg,.jpeg"
+//           className="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10"
+//           onChange={(e) => onFileChange(e.target.files?.[0]?.name ?? "")}
+//         />
+//         <div className="w-full px-0 py-3 bg-transparent border-b-2 border-gray-100 flex items-center justify-between group">
+//           <span className={fileName ? "text-[#1E1E1E] text-sm truncate max-w-[80%]" : "text-gray-300"}>
+//             {fileName || "Upload document (PDF, DOC, PNG, JPG)"}
+//           </span>
+//           <div className="w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center group-hover:bg-blue-600 group-hover:text-white transition-all">
+//             <Plus className="w-4 h-4" />
+//           </div>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// }
 
+function InputField({ label, type, name, ...props }: any) {
   return (
     <div className="relative">
       <label className="block text-sm font-bold text-[#1E1E1E] mb-3 uppercase tracking-wider">
@@ -198,6 +273,7 @@ function InputField({ label, type, ...props }: any) {
       </label>
       <input 
         type={type}
+        name={name}
         {...props}
         className="w-full px-0 py-3 bg-transparent border-b-2 border-gray-100 focus:outline-none focus:border-blue-600 transition-all placeholder:text-gray-300"
       />
@@ -205,17 +281,19 @@ function InputField({ label, type, ...props }: any) {
   );
 }
 
-function SelectField({ label, options, ...props }: any) {
+function SelectField({ label, options, name, ...props }: any) {
   return (
     <div className="relative">
       <label className="block text-sm font-bold text-[#1E1E1E] mb-3 uppercase tracking-wider">
         {label} {props.required && <span className="text-blue-600">*</span>}
       </label>
       <select 
+        name={name}
+        defaultValue=""
         {...props}
         className="w-full px-0 py-3 bg-transparent border-b-2 border-gray-100 focus:outline-none focus:border-blue-600 transition-all appearance-none bg-[url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20fill%3D%22none%22%20viewBox%3D%220%200%2024%2024%22%20stroke%3D%22%23D1D5DB%22%3E%3Cpath%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20stroke-width%3D%222%22%20d%3D%22m19%209-7%207-7-7%22%2F%3E%3C%2Fsvg%3E')] bg-[length:1.25rem_1.25rem] bg-[right_0_center] bg-no-repeat cursor-pointer text-[#1E1E1E]"
       >
-        <option value="" disabled selected>{label}</option>
+        <option value="" disabled>{label}</option>
         {options.map((opt: string) => (
           <option key={opt} value={opt}>{opt}</option>
         ))}

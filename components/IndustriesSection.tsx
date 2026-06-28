@@ -1,14 +1,15 @@
 "use client";
+import Link from "next/link";
 import Image from "next/image";
 import AnimateOnView from "./ui/AnimateOnView";
 
 const industries = [
   {
-    title: "Jewellery & DigiGold",
+    title: "AI & Machine Learning",
     description:
-      "Automates jewellery management, inventory, billing, and customer management. GST-ready, secure, and scalable for multi-branch operations.",
+      "Implement AI and machine learning solutions to automate tasks, analyze data, and improve decision-making in various industries.",
     image:
-      "https://res.cloudinary.com/drg82xgxc/image/upload/v1781103127/Frame_1000002974_tu4e1w.png",
+      "https://plus.unsplash.com/premium_photo-1764695627610-cba5a7648f78?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTQ3fHxhaSUyNm1sfGVufDB8fDB8fHwwhttps://res.cloudinary.com/drg82xgxc/image/upload/v1781103127/Frame_1000002974_tu4e1w.png",
   },
   {
     title: "Event Booking Software",
@@ -60,9 +61,9 @@ const industries = [
       "https://res.cloudinary.com/drg82xgxc/image/upload/v1781103134/Frame_1000002974_4_qj1pxj.png",
   },
   {
-    title: "Chit Software Development",
+    title: "Blockchain Software Development",
     description:
-      "Streamlined member registration, collection management, passbooks, automated EMI reminders, and reporting.",
+      "Build secure, transparent, and efficient blockchain solutions for industries like finance, supply chain, and healthcare.",
     image:
       "https://res.cloudinary.com/drg82xgxc/image/upload/v1781103131/Frame_1000002974_5_ioz3uc.png",
   },
@@ -132,9 +133,11 @@ export default function IndustriesSection() {
                     {item.description}
                   </p>
 
-                  <button
+                  <Link
+                    href="/contact"
                     className="
                       mt-4
+                      inline-block
                       h-[32px]
                       px-4
                       rounded-md
@@ -144,6 +147,7 @@ export default function IndustriesSection() {
                       hover:scale-105
                       transition-transform
                       duration-300
+                      leading-[32px]
                     "
                     style={{
                       background:
@@ -151,7 +155,7 @@ export default function IndustriesSection() {
                     }}
                   >
                     Explore →
-                  </button>
+                  </Link>
                 </div>
               </div>
             </AnimateOnView>

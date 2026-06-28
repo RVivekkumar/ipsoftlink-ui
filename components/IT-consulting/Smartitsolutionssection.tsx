@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import AnimateOnView from "../ui/AnimateOnView";
 
 const SOLUTIONS = [
@@ -77,9 +78,9 @@ export default function SmartITSolutionsSection() {
 
             {/* CTA button */}
             <div className="mt-1">
-              <button className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm px-6 py-3 rounded-md transition-colors shadow-md hover:scale-105 transition-transform">
+              <Link href="/contact" className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm px-6 py-3 rounded-md transition-colors shadow-md hover:scale-105 transition-transform">
                 Let's Build what Next? <span>→</span>
-              </button>
+              </Link>
             </div>
 
           </div>

@@ -9,21 +9,21 @@ const counters = [
   {
     image:
       "https://res.cloudinary.com/drg82xgxc/image/upload/v1781104502/div_v9wtmw.png",
-    count: 500,
+    count: 10,
     suffix: "+",
     label: "Happy Clients",
   },
   {
     image:
       "https://res.cloudinary.com/drg82xgxc/image/upload/v1781103127/div_udpqge.png",
-    count: 1200,
+    count: 15,
     suffix: "+",
     label: "Projects Delivered",
   },
   {
     image:
       "https://res.cloudinary.com/drg82xgxc/image/upload/v1781103126/div_1_mna7mu.png",
-    count: 50,
+    count: 10,
     suffix: "+",
     label: "Experts",
   },

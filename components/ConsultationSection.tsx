@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { FormEvent, useState } from "react";
 import {
   ArrowRight,
   User,
@@ -9,6 +10,10 @@ import {
   ShieldCheck,
 } from "lucide-react";
 import AnimateOnView from "./ui/AnimateOnView";
+import FormSubmitStatus, {
+  FormSubmitStatusType,
+} from "./ui/FormSubmitStatus";
+import { CONSULTATION_RECIPIENT, submitWeb3Form } from "@/lib/web3forms";
 
 const features = [
   {
@@ -63,6 +68,40 @@ const benefits = [
 ];
 
 export default function ConsultationSection() {
+  const [status, setStatus] = useState<FormSubmitStatusType>("idle");
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+
+  const dismissStatus = () => {
+    setStatus("idle");
+    setErrorMessage(null);
+  };
+
+  const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    event.stopPropagation();
+    setStatus("sending");
+    setErrorMessage(null);
+
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+    const name = String(formData.get("name") ?? "Visitor");
+
+    const result = await submitWeb3Form(form, {
+      subject: `Free Consultation Request from ${name}`,
+      fromName: "IP Softlink Website",
+      routeTo: CONSULTATION_RECIPIENT,
+      formType: "consultation",
+    });
+
+    if (result.success) {
+      setStatus("success");
+      form.reset();
+    } else {
+      setStatus("error");
+      setErrorMessage(result.message ?? "Something went wrong. Please try again.");
+    }
+  };
+
   return (
     <section
       className="relative overflow-hidden py-14 md:py-20"
@@ -73,6 +112,13 @@ export default function ConsultationSection() {
         backgroundPosition: "center",
       }}
     >
+      <FormSubmitStatus
+        variant="toast"
+        status={status}
+        message={errorMessage}
+        successMessage="Consultation request sent! Our expert will connect with you within 24 hours."
+        onDismiss={dismissStatus}
+      />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           
@@ -151,30 +197,53 @@ export default function ConsultationSection() {
                     </div>
                   </div>
 
-                  <div className="space-y-4">
+                  <form
+                    onSubmit={onSubmit}
+                    action="#"
+                    method="post"
+                    className="space-y-4"
+                  >
+                    <FormSubmitStatus
+                      status={status}
+                      message={errorMessage}
+                      onDismiss={dismissStatus}
+                    />
+
                     <InputField
                       icon={<User size={18} />}
+                      name="name"
+                      type="text"
                       placeholder="Full Name"
+                      required
                     />
 
                     <InputField
                       icon={<Mail size={18} />}
+                      name="email"
+                      type="email"
                       placeholder="Work Email"
+                      required
                     />
 
                     <InputField
                       icon={<Phone size={18} />}
+                      name="phone"
+                      type="tel"
                       placeholder="Phone Number"
+                      required
                     />
-                  </div>
 
-                  <button
-                    className="
+                    <button
+                      type="submit"
+                      disabled={status === "sending"}
+                      className="
                       mt-5
                       w-full
                       sm:w-auto
                       bg-[#0057FF]
                       hover:bg-[#0048d4]
+                      disabled:opacity-60
+                      disabled:cursor-not-allowed
                       text-white
                       px-8
                       h-[54px]
@@ -186,10 +255,11 @@ export default function ConsultationSection() {
                       transition-all
                       hover:scale-105
                     "
-                  >
-                    Book Free Consultation
-                    <ArrowRight size={18} />
-                  </button>
+                    >
+                      {status === "sending" ? "Sending..." : "Book Free Consultation"}
+                      <ArrowRight size={18} />
+                    </button>
+                  </form>
                 </div>
               </AnimateOnView>
             </div>
@@ -274,10 +344,16 @@ export default function ConsultationSection() {
 
 function InputField({
   icon,
+  name,
+  type,
   placeholder,
+  required,
 }: {
   icon: React.ReactNode;
+  name: string;
+  type: string;
   placeholder: string;
+  required?: boolean;
 }) {
   return (
     <div className="relative">
@@ -286,8 +362,10 @@ function InputField({
       </div>
 
       <input
-        type="text"
+        type={type}
+        name={name}
         placeholder={placeholder}
+        required={required}
         className="
           w-full
           h-[56px]

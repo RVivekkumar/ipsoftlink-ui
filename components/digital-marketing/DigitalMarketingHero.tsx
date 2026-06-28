@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import AnimateOnView from "@/components/ui/AnimateOnView";
@@ -52,12 +53,12 @@ export default function DigitalMarketingHero() {
             {/* Buttons */}
             <AnimateOnView direction="right" delay={0.3}>
               <div className="flex flex-wrap gap-4">
-                <button className="px-8 py-4 bg-[#0052FF] hover:bg-blue-700 text-white font-bold rounded-xl shadow-lg shadow-blue-500/30 transition-all duration-300 flex items-center gap-2">
+                <Link href="/contact" className="px-8 py-4 bg-[#0052FF] hover:bg-blue-700 text-white font-bold rounded-xl shadow-lg shadow-blue-500/30 transition-all duration-300 flex items-center gap-2">
                   Explore Our Services <ArrowRight className="w-4 h-4" />
-                </button>
-                <button className="px-8 py-4 bg-white hover:bg-gray-50 text-[#1E1E1E] font-bold rounded-xl shadow-md transition-all duration-300">
+                </Link>
+                <Link href="/contact" className="px-8 py-4 bg-white hover:bg-gray-50 text-[#1E1E1E] font-bold rounded-xl shadow-md transition-all duration-300">
                   View Our Work
-                </button>
+                </Link>
               </div>
             </AnimateOnView>
           </div>

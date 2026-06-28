@@ -19,6 +19,7 @@ const TABS = [
     items: [
       { name: "Python", logo: "https://res.cloudinary.com/drg82xgxc/image/upload/v1781103100/Group_1686552545_zpej7a.png" },
       { name: "Node", logo: "https://res.cloudinary.com/drg82xgxc/image/upload/v1781103083/Group_1686552559_x0ywsf.png" },
+      { name: "Java", logo: "https://res.cloudinary.com/drg82xgxc/image/upload/v1781103114/Group_1686552563_sjr5nh.png" },
       // { name: "PHP", logo: "https://res.cloudinary.com/drg82xgxc/image/upload/v1781103083/Group_1686552562_b9hltm.png" },
     ],
   },
@@ -26,6 +27,10 @@ const TABS = [
     label: "Mobile App",
     items: [
       { name: "Flutter", logo: "https://res.cloudinary.com/drg82xgxc/image/upload/v1781103114/Group_1686552563_sjr5nh.png" },
+      { name: "React Native", logo: "https://res.cloudinary.com/drg82xgxc/image/upload/v1781103114/Group_1686552563_sjr5nh.png" },
+      { name: "Swift", logo: "https://res.cloudinary.com/drg82xgxc/image/upload/v1781103114/Group_1686552563_sjr5nh.png" },
+      {name: "ios", logo: "https://res.cloudinary.com/drg82xgxc/image/upload/v1781103114/Group_1686552563_sjr5nh.png" },
+      {name: "android", logo: "https://res.cloudinary.com/drg82xgxc/image/upload/v1781103114/Group_1686552563_sjr5nh.png" },
     ],
   },
   {
@@ -33,7 +38,10 @@ const TABS = [
     items: [
       { name: "AWS", logo: "https://res.cloudinary.com/drg82xgxc/image/upload/v1781104416/Group_1686552568_g7i1ok.png" },
       { name: "Docker", logo: "https://res.cloudinary.com/drg82xgxc/image/upload/v1781103105/Group_1686552610_hrheef.png" },
-      { name: "Git", logo: "https://res.cloudinary.com/drg82xgxc/image/upload/v1781103128/Group_1686552566_hd0wdy.png" },
+      { name: "Git", logo: "https://res.cloudinary.com/drg82xgxc/image/upload/v1781103128/Group_1686552566_hd0wdy.png" }, 
+      { name: "GitLab", logo: "https://res.cloudinary.com/drg82xgxc/image/upload/v1781103128/Group_1686552566_hd0wdy.png" },
+      {name:  "azure", logo: "https://res.cloudinary.com/drg82xgxc/image/upload/v1781103114/Group_1686552563_sjr5nh.png" },
+      {name:  "GCP", logo: "https://res.cloudinary.com/drg82xgxc/image/upload/v1781103114/Group_1686552563_sjr5nh.png" },
     ],
   },
   {
@@ -41,6 +49,7 @@ const TABS = [
     items: [
       { name: "MongoDB", logo: "https://res.cloudinary.com/drg82xgxc/image/upload/v1781103083/Group_1686552562_b9hltm.png" },
       { name: "MySQL", logo: "https://res.cloudinary.com/drg82xgxc/image/upload/v1781103128/Group_1686552567_k3loq5.png" },
+      { name: "PostgreSQL", logo: "https://res.cloudinary.com/drg82xgxc/image/upload/v1781103128/Group_1686552567_k3loq5.png" },
     ],
   },
   {

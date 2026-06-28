@@ -85,9 +85,9 @@ const [serviceOpen, setServiceOpen] = useState(false);
           <div className="flex items-center gap-3">
 
             {/* CTA Button */}
-            <button className="hidden sm:block bg-gradient-to-r from-blue-500 to-blue-900 text-white px-4 md:px-5 py-2 rounded-full text-sm">
+            <Link href="/contact" className="hidden sm:block bg-gradient-to-r from-blue-500 to-blue-900 text-white px-4 md:px-5 py-2 rounded-full text-sm">
               Get Demo
-            </button>
+            </Link>
 
             {/* ✅ Mobile Menu Button */}
             <button
@@ -118,9 +118,9 @@ const [serviceOpen, setServiceOpen] = useState(false);
         <Link href="/contact" onClick={() => setOpen(false)}>Contact Us</Link>
 
         {/* Mobile CTA */}
-        <button className="mt-3 bg-blue-600 text-white px-6 py-2 rounded-full">
+        <Link href="/contact" onClick={() => setOpen(false)} className="mt-3 bg-blue-600 text-white px-6 py-2 rounded-full">
           Get Demo
-        </button>
+        </Link>
       </div>
     </>
   );
