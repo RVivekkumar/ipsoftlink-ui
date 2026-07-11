@@ -69,7 +69,7 @@ export default function FounderAndWhyChooseSection() {
                 <div className="lg:col-span-1">
                   <div className="pl-8 flex items-center h-full">
                     <p className="text-[#1E1E1E] text-lg font-semibold italic leading-relaxed">
-                      "IP Softlink was founded with a simple vision — to help businesses leverage technology not just as a tool, but as a strategic advantage."
+                      &ldquo;IP Softlink was founded with a simple vision — to help businesses leverage technology not just as a tool, but as a strategic advantage.&rdquo;
                     </p>
                   </div>
                 </div>
@@ -93,7 +93,7 @@ export default function FounderAndWhyChooseSection() {
               <AnimateOnView direction="left" delay={0.3} className="lg:col-span-1">
                 <div className="pr-8 flex items-center h-full">
                   <p className="text-[#1E1E1E] text-lg font-semibold italic leading-relaxed">
-                    "Our goal is to create meaningful digital solutions that solve real-world challenges and empower organizations to grow with confidence."
+                    &ldquo;Our goal is to create meaningful digital solutions that solve real-world challenges and empower organizations to grow with confidence.&rdquo;
                   </p>
                 </div>
               </AnimateOnView>

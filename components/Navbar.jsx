@@ -39,9 +39,9 @@ const navLinks = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/about" },
   // { label: "Product", href: "/product" },
-  { label: "Portfolio", href: "/portfolio" },
-  { label: "Blogs", href: "/blogs" },
-  { label: "Career", href: "/career" },
+  // { label: "Portfolio", href: "/portfolio" },
+  // { label: "Blogs", href: "/blogs" },
+  // { label: "Career", href: "/career" },
   { label: "Contact Us", href: "/contact" },
 ];
 

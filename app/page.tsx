@@ -12,6 +12,15 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "IP Softlink - Leading Software Development & IT Consulting Company",
+  icons: {
+    icon: [
+      {
+        url: "https://res.cloudinary.com/drg82xgxc/image/upload/v1781102082/IP_logo2_1_1_1_ako1wn.png",
+        type: "image/png",
+      },
+    ],
+    apple: "https://res.cloudinary.com/drg82xgxc/image/upload/v1781102082/IP_logo2_1_1_1_ako1wn.png",
+  },
   description: "IP Softlink is a top software development company offering custom software, mobile apps, web development, IT consulting, and digital marketing solutions. Transform your business with our expertise.",
   keywords: ["software development", "IT consulting", "mobile app development", "web development", "digital marketing", "IP Softlink"],
   openGraph: {

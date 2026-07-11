@@ -137,6 +137,8 @@ export default function ConsultationSection() {
                 </span>
               </h2>
 
+              <p className="text-[#0057FF] md:text-xl">Get a FREE 30-Days Trial of Our Software Solution</p>
+
               <p className="mt-5 text-gray-600 text-base md:text-lg max-w-[560px]">
                 Discuss your business goals with our experts and
                 get a customised software solution roadmap for
