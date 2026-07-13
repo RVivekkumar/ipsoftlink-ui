@@ -9,6 +9,7 @@ import ConsultationSection from "@/components/ConsultationSection";
 import Footer from "@/components/Footer";
 import TechStack from "@/components/TechStack";
 import { Metadata } from "next";
+import NewConsultationSection from "@/components/NewConsultationSection";
 
 export const metadata: Metadata = {
   title: "IP Softlink - Leading Software Development & IT Consulting Company",
@@ -63,7 +64,8 @@ export default function Home() {
       <IndustriesSection />
       <BusinessGrowthSection />
       <WhyChooseUsSection />
-      <ConsultationSection />
+      {/* <ConsultationSection /> */}
+      <NewConsultationSection/>
       <Footer />
     </main>
   );

@@ -80,7 +80,7 @@ export default function FounderAndWhyChooseSection() {
                 <div className="relative w-full max-w-[300px] aspect-square rounded-[32px] overflow-hidden shadow-2xl">
                   <div className="absolute inset-0 flex items-center justify-center text-center p-8 text-blue-400 z-10">
                     <Image
-                      src="https://res.cloudinary.com/drxigvlxc/image/upload/v1781417378/Frame_1686552783_hhiywh.png"
+                      src="https://res.cloudinary.com/drxigvlxc/image/upload/v1783908050/WhatsApp_Image_2026-07-11_at_8.25.41_AM_zlyyk5.jpg"
                       alt="Founder"
                       fill
                       className="object-cover"

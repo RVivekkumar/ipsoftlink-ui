@@ -87,7 +87,10 @@ export async function submitWeb3Form(
   form: HTMLFormElement,
   options: SubmitWeb3FormOptions
 ): Promise<Web3FormResult> {
-  if (!getAccessKey()) {
+  const accessKey = getAccessKey();
+  console.log("Web3Forms access key:", accessKey ? "Set" : "Not set");
+  
+  if (!accessKey) {
     return {
       success: false,
       message:
@@ -97,6 +100,7 @@ export async function submitWeb3Form(
 
   try {
     const payload = await buildPayload(form, options);
+    console.log("Web3Forms payload:", payload);
 
     const response = await fetch(WEB3FORMS_SUBMIT_URL, {
       method: "POST",
