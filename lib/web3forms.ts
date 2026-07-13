@@ -3,13 +3,13 @@
 const WEB3FORMS_SUBMIT_URL = "https://api.web3forms.com/submit";
 
 export const SERVICE_RECIPIENTS: Record<string, string> = {
-  "Software Development": "bd@IPsoftlink.com",
-  "Mobile App Development": "bd@IPsoftlink.com",
-  "IT Consulting": "bd@IPsoftlink.com",
-  Other: "bd@IPsoftlink.com",
+  "Software Development": "sales@ipsoftlink.com",
+  "Mobile App Development": "sales@ipsoftlink.com",
+  "IT Consulting": "sales@ipsoftlink.com",
+  Other: "sales@ipsoftlink.com",
 };
 
-export const CONSULTATION_RECIPIENT = "bd@IPsoftlink.com";
+export const CONSULTATION_RECIPIENT = "sales@ipsoftlink.com";
 
 export type SubmitWeb3FormOptions = {
   subject: string;
@@ -143,5 +143,5 @@ export async function submitWeb3Form(
 }
 
 export function getServiceRecipient(service: string): string {
-  return SERVICE_RECIPIENTS[service] ?? "bd@IPsoftlink.com";
+  return SERVICE_RECIPIENTS[service] ?? "sales@ipsoftlink.com";
 }

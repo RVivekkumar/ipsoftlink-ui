@@ -1,6 +1,6 @@
 "use client";
 
-import { ChevronRightIcon } from "lucide-react";
+import { ChevronRightIcon, MapPin } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -31,11 +31,7 @@ const technologies = [
   "Block Chain",
 ];
 
-const products = [
-  "Smart CRM",
-  "Real Estate CRM",
-  "Travel CRM",
-];
+const products = ["Smart CRM", "Real Estate CRM", "Travel CRM"];
 
 export default function Footer() {
   return (
@@ -89,13 +85,37 @@ export default function Footer() {
                 height={52}
                 className="h-12 w-auto flex-shrink-0"
               />
-              <div>
-                <p className="font-semibold text-lg mb-1">Visit Us</p>
-                <p className="text-gray-600 text-[15px] leading-relaxed">
-                  5B, Singarayar Colony, B.B Kulam<br />
-                  Narimedu, Madurai-625002.
-                </p>
-              </div>
+              <div className="text-left">
+          <h3 className="font-semibold mb-2">Visit Us</h3>
+
+          <div className="flex gap-2 mb-3">
+            <MapPin
+              size={18}
+              className="text-[#0154EE] mt-1 shrink-0"
+            />
+
+            <p className="text-gray-600 text-sm">
+              18014 Calander Ave Richmond,
+              <br />
+              TX 77407, USA.
+            </p>
+          </div>
+
+          <div className="flex gap-2">
+            <MapPin
+              size={18}
+              className="text-[#0154EE] mt-1 shrink-0"
+            />
+
+            <p className="text-gray-600 text-sm">
+              5B, Singarayar Colony,
+              <br />
+              B.B Kulam, Narimedu,
+              <br />
+              Madurai – 625002.
+            </p>
+          </div>
+        </div>
             </div>
 
             {/* USA */}
@@ -108,10 +128,10 @@ export default function Footer() {
                 className="h-12 w-auto flex-shrink-0"
               />
               <div>
-                <p className="font-semibold text-lg mb-1">USA</p>
+                <p className="font-semibold  mb-1">USA</p>
                 <a
                   href="tel:+18323871021"
-                  className="text-gray-700 hover:text-blue-600 transition"
+                  className="text-gray-700 text-sm hover:text-blue-600 transition"
                 >
                   +1 (832) 387-1021
                 </a>
@@ -128,10 +148,10 @@ export default function Footer() {
                 className="h-12 w-auto flex-shrink-0"
               />
               <div>
-                <p className="font-semibold text-lg mb-1">India</p>
+                <p className="font-semibold mb-1">India</p>
                 <a
                   href="tel:+919003418834"
-                  className="text-gray-700 hover:text-blue-600 transition"
+                  className="text-gray-700 hover:text-blue-600 transition text-sm"
                 >
                   +91 90034 18834
                 </a>
@@ -152,13 +172,19 @@ export default function Footer() {
                   className="h-12 w-auto"
                 />
               </div>
-                <h3 className="text-xl font-bold text-black">Services</h3>
+              <h3 className="text-xl font-bold text-black">Services</h3>
 
               <ul className="space-y-3 text-[15px] text-gray-700 py-4">
                 {services.map((item) => (
-                  <li key={item.name} className="flex items-center gap-2 hover:text-blue-600 transition">
+                  <li
+                    key={item.name}
+                    className="flex items-center gap-2 hover:text-blue-600 transition"
+                  >
                     <Link href={item.href} className="flex items-center gap-2">
-                      <span className="text-[#1e40af]"><ChevronRightIcon size={22} color="#0154EE" /> </span> <span className="text-xs">{item.name} </span>
+                      <span className="text-[#1e40af]">
+                        <ChevronRightIcon size={22} color="#0154EE" />{" "}
+                      </span>{" "}
+                      <span className="text-xs">{item.name} </span>
                     </Link>
                   </li>
                 ))}
@@ -176,12 +202,18 @@ export default function Footer() {
                   className="h-12 w-auto"
                 />
               </div>
-                <h3 className="text-xl font-bold text-black">Solutions</h3>
+              <h3 className="text-xl font-bold text-black">Solutions</h3>
               <ul className="space-y-3 text-[15px] text-gray-700 py-4">
                 {solutions.map((item) => (
-                  <li key={item.name} className="flex items-center gap-2 hover:text-blue-600 transition">
+                  <li
+                    key={item.name}
+                    className="flex items-center gap-2 hover:text-blue-600 transition"
+                  >
                     <Link href={item.href} className="flex items-center gap-2">
-                      <span className="text-[#1e40af]"><ChevronRightIcon size={22} color="#0154EE" /> </span> <span className="text-xs">{item.name} </span>
+                      <span className="text-[#1e40af]">
+                        <ChevronRightIcon size={22} color="#0154EE" />{" "}
+                      </span>{" "}
+                      <span className="text-xs">{item.name} </span>
                     </Link>
                   </li>
                 ))}
@@ -198,13 +230,18 @@ export default function Footer() {
                   height={48}
                   className="h-12 w-auto"
                 />
-                
               </div>
               <h3 className="text-xl font-bold text-black">Technology</h3>
               <ul className="space-y-3 text-[15px] text-gray-700 py-4">
                 {technologies.map((item) => (
-                  <li key={item} className="flex items-center gap-2 hover:text-blue-600 transition cursor-pointer">
-                    <span className="text-[#1e40af]"><ChevronRightIcon size={22} color="#0154EE" /> </span> <span className="text-xs">{item} </span>
+                  <li
+                    key={item}
+                    className="flex items-center gap-2 hover:text-blue-600 transition cursor-pointer"
+                  >
+                    <span className="text-[#1e40af]">
+                      <ChevronRightIcon size={22} color="#0154EE" />{" "}
+                    </span>{" "}
+                    <span className="text-xs">{item} </span>
                   </li>
                 ))}
               </ul>
@@ -221,12 +258,18 @@ export default function Footer() {
                   className="h-12 w-auto"
                 />
               </div>
-                <h3 className="text-xl font-bold text-black">Product</h3>
+              <h3 className="text-xl font-bold text-black">Product</h3>
 
               <ul className="space-y-3 text-[15px] text-gray-700 py-4">
                 {products.map((item) => (
-                  <li key={item} className="flex items-center gap-2 hover:text-blue-600 transition cursor-pointer">
-                    <span className="text-[#1e40af]"><ChevronRightIcon size={22} color="#0154EE" /></span> <span className="text-xs">{item} </span>
+                  <li
+                    key={item}
+                    className="flex items-center gap-2 hover:text-blue-600 transition cursor-pointer"
+                  >
+                    <span className="text-[#1e40af]">
+                      <ChevronRightIcon size={22} color="#0154EE" />
+                    </span>{" "}
+                    <span className="text-xs">{item} </span>
                   </li>
                 ))}
               </ul>
@@ -248,7 +291,11 @@ export default function Footer() {
 
               {/* Social Icons as Images (Exact as provided) */}
               <div className="flex gap-3">
-                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+                <a
+                  href="https://facebook.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <Image
                     src="https://res.cloudinary.com/drg82xgxc/image/upload/v1781103308/Group_161988_yzqyj3.png"
                     alt="Facebook"
@@ -257,7 +304,11 @@ export default function Footer() {
                     className="cursor-pointer hover:scale-110 transition"
                   />
                 </a>
-                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+                <a
+                  href="https://twitter.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <Image
                     src="https://res.cloudinary.com/drg82xgxc/image/upload/v1781103307/Group_143_foa2ic.png"
                     alt="Twitter"
@@ -266,7 +317,11 @@ export default function Footer() {
                     className="cursor-pointer hover:scale-110 transition"
                   />
                 </a>
-                <a href="https://pinterest.com" target="_blank" rel="noopener noreferrer">
+                <a
+                  href="https://pinterest.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <Image
                     src="https://res.cloudinary.com/drg82xgxc/image/upload/v1781103145/Group_144_knxqlm.png"
                     alt="Pinterest"
@@ -275,7 +330,11 @@ export default function Footer() {
                     className="cursor-pointer hover:scale-110 transition"
                   />
                 </a>
-                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+                <a
+                  href="https://instagram.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <Image
                     src="https://res.cloudinary.com/drg82xgxc/image/upload/v1781103145/Group_145_riy6cr.png"
                     alt="Instagram"
@@ -284,7 +343,11 @@ export default function Footer() {
                     className="cursor-pointer hover:scale-110 transition"
                   />
                 </a>
-                <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">
+                <a
+                  href="https://youtube.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <Image
                     src="https://res.cloudinary.com/drg82xgxc/image/upload/v1781111245/Group_146_kjrlnv.png"
                     alt="YouTube"
