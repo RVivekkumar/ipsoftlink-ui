@@ -110,8 +110,8 @@ export default function ContactFormSection() {
                 icon={<MessageCircle className="w-6 h-6" />}
                 title="Chat to Business"
                 description="Speak to our Friendly team."
-                linkText="bd@IPsoftlink.com"
-                href="mailto:bd@IPsoftlink.com"
+                linkText="sales@ipsoftlink.com"
+                href="mailto:sales@ipsoftlink.com"
               />
             </AnimateOnView>
             <AnimateOnView direction="up" delay={0.2}>
@@ -119,8 +119,8 @@ export default function ContactFormSection() {
                 icon={<MessageCircle className="w-6 h-6" />}
                 title="Chat to With Us"
                 description="We're here to help."
-                linkText="careers@ipsoftlink.com"
-                href="mailto:careers@ipsoftlink.com"
+                linkText="admin@ipsoftlink.com"
+                href="mailto:admin@ipsoftlink.com"
               />
             </AnimateOnView>
             <AnimateOnView direction="up" delay={0.3}>
